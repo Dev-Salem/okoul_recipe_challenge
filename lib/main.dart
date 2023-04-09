@@ -21,10 +21,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text("Hello World"));
+    return Scaffold(
+        body: Center(
+      child: ElevatedButton(
+          onPressed: () async {
+            
+          },
+          child: Text("Hi")),
+    ));
   }
 }
-
 /*
 httpCall() async {
   final dio = Dio();
