@@ -1,0 +1,540 @@
+{
+    "aspect_ratio": "16:9",
+    "servings_noun_singular": "serving",
+    "video_url": null,
+    "user_ratings": {
+      "count_positive": 6,
+      "count_negative": 0,
+      "score": 1
+    },
+    "show_id": 17,
+    "tips_and_ratings_enabled": true,
+    "total_time_minutes": null,
+    "updated_at": 1646946535,
+    "approved_at": 1646330062,
+    "beauty_url": null,
+    "id": 8138,
+    "language": "eng",
+    "topics": [
+      {
+        "name": "Sunday Brunch",
+        "slug": "brunch"
+      },
+      {
+        "name": "Romantic Dinners",
+        "slug": "romantic-dinners"
+      },
+      {
+        "name": "Lunch",
+        "slug": "lunch"
+      },
+      {
+        "name": "American",
+        "slug": "american"
+      }
+    ],
+    "name": "Curried Potato Leek Soup",
+    "promotion": "full",
+    "credits": [
+      {
+        "type": "internal",
+        "name": null
+      }
+    ],
+    "facebook_posts": [],
+    "buzz_id": null,
+    "country": "US",
+    "description": "Shop <a href=\"https://shop.mikmak.com/link/16469324713846767b648/10ca3f74-ec19-627b-673d-51f82a7acbe3?\">Campbell's® Soup</a> to try this recipe for yourself!",
+    "inspired_by_url": null,
+    "original_video_url": null,
+    "renditions": [],
+    "cook_time_minutes": null,
+    "created_at": 1646264812,
+    "is_one_top": false,
+    "tags": [
+      {
+        "id": 65848,
+        "name": "stove_top",
+        "display_name": "Stove Top",
+        "type": "appliance"
+      },
+      {
+        "id": 64489,
+        "name": "lunch",
+        "display_name": "Lunch",
+        "type": "meal"
+      },
+      {
+        "type": "difficulty",
+        "id": 64471,
+        "name": "easy",
+        "display_name": "Easy"
+      },
+      {
+        "name": "brunch",
+        "display_name": "Brunch",
+        "type": "occasion",
+        "id": 64484
+      },
+      {
+        "id": 64444,
+        "name": "american",
+        "display_name": "American",
+        "type": "cuisine"
+      },
+      {
+        "id": 8091920,
+        "name": "high_fiber",
+        "display_name": "High-Fiber",
+        "type": "healthy"
+      }
+    ],
+    "thumbnail_alt_text": "",
+    "thumbnail_url": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/1308cc4ac878420da65b1423001a9dbd.jpeg",
+    "nutrition_visibility": "auto",
+    "video_ad_content": null,
+    "prep_time_minutes": null,
+    "seo_title": "",
+    "seo_path": null,
+    "yields": "Servings: 4",
+    "sections": [
+      {
+        "components": [
+          {
+            "raw_text": "2 tablespoons unsalted butter",
+            "extra_comment": "",
+            "position": 1,
+            "measurements": [
+              {
+                "id": 684423,
+                "quantity": "2",
+                "unit": {
+                  "display_singular": "tablespoon",
+                  "display_plural": "tablespoons",
+                  "system": "imperial",
+                  "name": "tablespoon",
+                  "abbreviation": "tbsp"
+                }
+              }
+            ],
+            "ingredient": {
+              "id": 291,
+              "name": "unsalted butter",
+              "display_singular": "unsalted butter",
+              "display_plural": "unsalted butters",
+              "created_at": 1494806355,
+              "updated_at": 1509035272
+            },
+            "id": 92885
+          },
+          {
+            "measurements": [
+              {
+                "unit": {
+                  "name": "",
+                  "abbreviation": "",
+                  "display_singular": "",
+                  "display_plural": "",
+                  "system": "none"
+                },
+                "id": 684432,
+                "quantity": "1"
+              }
+            ],
+            "ingredient": {
+              "name": "leek",
+              "display_singular": "leek",
+              "display_plural": "leeks",
+              "created_at": 1518779021,
+              "updated_at": 1518779021,
+              "id": 3749
+            },
+            "id": 92886,
+            "raw_text": "1 leek, white and light green parts only, thinly sliced",
+            "extra_comment": "white and light green parts only, thinly sliced",
+            "position": 2
+          },
+          {
+            "id": 92887,
+            "raw_text": "1 large carrot, small diced",
+            "extra_comment": "small diced",
+            "position": 3,
+            "measurements": [
+              {
+                "unit": {
+                  "name": "",
+                  "abbreviation": "",
+                  "display_singular": "",
+                  "display_plural": "",
+                  "system": "none"
+                },
+                "id": 684425,
+                "quantity": "1"
+              }
+            ],
+            "ingredient": {
+              "created_at": 1495688206,
+              "updated_at": 1509035236,
+              "id": 755,
+              "name": "large carrot",
+              "display_singular": "large carrot",
+              "display_plural": "large carrots"
+            }
+          },
+          {
+            "extra_comment": "roughly chopped",
+            "position": 4,
+            "measurements": [
+              {
+                "unit": {
+                  "abbreviation": "clove",
+                  "display_singular": "clove",
+                  "display_plural": "cloves",
+                  "system": "none",
+                  "name": "clove"
+                },
+                "id": 684427,
+                "quantity": "2"
+              }
+            ],
+            "ingredient": {
+              "id": 95,
+              "name": "garlic",
+              "display_singular": "garlic",
+              "display_plural": "garlics",
+              "created_at": 1493744766,
+              "updated_at": 1509035285
+            },
+            "id": 92888,
+            "raw_text": "2 garlic cloves, roughly chopped"
+          },
+          {
+            "id": 92889,
+            "raw_text": "2 Yukon gold potatoes, cut into ½-inch pieces",
+            "extra_comment": "cut into 1/2 (1.24 cm) pieces",
+            "position": 5,
+            "measurements": [
+              {
+                "unit": {
+                  "system": "none",
+                  "name": "",
+                  "abbreviation": "",
+                  "display_singular": "",
+                  "display_plural": ""
+                },
+                "id": 684421,
+                "quantity": "2"
+              }
+            ],
+            "ingredient": {
+              "display_plural": "yukon gold potatoes",
+              "created_at": 1512014380,
+              "updated_at": 1512014380,
+              "id": 3308,
+              "name": "yukon gold potato",
+              "display_singular": "yukon gold potato"
+            }
+          },
+          {
+            "position": 6,
+            "measurements": [
+              {
+                "id": 684422,
+                "quantity": "1",
+                "unit": {
+                  "name": "teaspoon",
+                  "abbreviation": "tsp",
+                  "display_singular": "teaspoon",
+                  "display_plural": "teaspoons",
+                  "system": "imperial"
+                }
+              }
+            ],
+            "ingredient": {
+              "created_at": 1496674140,
+              "updated_at": 1509035196,
+              "id": 1293,
+              "name": "ground turmeric",
+              "display_singular": "ground turmeric",
+              "display_plural": "ground turmerics"
+            },
+            "id": 92890,
+            "raw_text": "1 teaspoon ground turmeric",
+            "extra_comment": ""
+          },
+          {
+            "measurements": [
+              {
+                "id": 684426,
+                "quantity": "1",
+                "unit": {
+                  "name": "tablespoon",
+                  "abbreviation": "tbsp",
+                  "display_singular": "tablespoon",
+                  "display_plural": "tablespoons",
+                  "system": "imperial"
+                }
+              }
+            ],
+            "ingredient": {
+              "created_at": 1646319116,
+              "updated_at": 1646319116,
+              "id": 9611,
+              "name": "yellow curry powder",
+              "display_singular": "yellow curry powder",
+              "display_plural": "yellow curry powders"
+            },
+            "id": 92891,
+            "raw_text": "1 tablespoon yellow curry powder",
+            "extra_comment": "",
+            "position": 7
+          },
+          {
+            "id": 92892,
+            "raw_text": "4 cups (32 ounces) chicken broth",
+            "extra_comment": "",
+            "position": 8,
+            "measurements": [
+              {
+                "id": 684430,
+                "quantity": "960",
+                "unit": {
+                  "system": "metric",
+                  "name": "liter",
+                  "abbreviation": "L",
+                  "display_singular": "L",
+                  "display_plural": "L"
+                }
+              },
+              {
+                "id": 684429,
+                "quantity": "4",
+                "unit": {
+                  "name": "cup",
+                  "abbreviation": "c",
+                  "display_singular": "cup",
+                  "display_plural": "cups",
+                  "system": "imperial"
+                }
+              }
+            ],
+            "ingredient": {
+              "id": 218,
+              "name": "chicken broth",
+              "display_singular": "chicken broth",
+              "display_plural": "chicken broths",
+              "created_at": 1494212911,
+              "updated_at": 1509035278
+            }
+          },
+          {
+            "extra_comment": "",
+            "position": 9,
+            "measurements": [
+              {
+                "id": 684428,
+                "quantity": "2",
+                "unit": {
+                  "system": "none",
+                  "name": "can",
+                  "abbreviation": "can",
+                  "display_singular": "can",
+                  "display_plural": "cans"
+                }
+              }
+            ],
+            "ingredient": {
+              "display_plural": "Campbell's® creams of chicken soup",
+              "created_at": 1636637078,
+              "updated_at": 1636637078,
+              "id": 9323,
+              "name": "Campbell's® Cream of Chicken Soup",
+              "display_singular": "Campbell's® cream of chicken soup"
+            },
+            "id": 92893,
+            "raw_text": "2 10.5-ounce cans of Campbell's® Cream of Chicken Soup"
+          },
+          {
+            "ingredient": {
+              "created_at": 1493906396,
+              "updated_at": 1509035283,
+              "id": 154,
+              "name": "fresh parsley",
+              "display_singular": "fresh parsley",
+              "display_plural": "fresh parsleys"
+            },
+            "id": 92894,
+            "raw_text": "2 tablespoons chopped fresh parsley, divided",
+            "extra_comment": "divided",
+            "position": 10,
+            "measurements": [
+              {
+                "id": 684431,
+                "quantity": "2",
+                "unit": {
+                  "name": "tablespoon",
+                  "abbreviation": "tbsp",
+                  "display_singular": "tablespoon",
+                  "display_plural": "tablespoons",
+                  "system": "imperial"
+                }
+              }
+            ]
+          },
+          {
+            "id": 92895,
+            "raw_text": "Kosher salt, to taste",
+            "extra_comment": "to taste",
+            "position": 11,
+            "measurements": [
+              {
+                "quantity": "0",
+                "unit": {
+                  "display_singular": "",
+                  "display_plural": "",
+                  "system": "none",
+                  "name": "",
+                  "abbreviation": ""
+                },
+                "id": 684424
+              }
+            ],
+            "ingredient": {
+              "name": "kosher salt",
+              "display_singular": "kosher salt",
+              "display_plural": "kosher salts",
+              "created_at": 1493307153,
+              "updated_at": 1509035289,
+              "id": 11
+            }
+          },
+          {
+            "id": 92896,
+            "raw_text": "Freshly ground black pepper, to taste",
+            "extra_comment": "to taste",
+            "position": 12,
+            "measurements": [
+              {
+                "id": 684433,
+                "quantity": "0",
+                "unit": {
+                  "display_singular": "",
+                  "display_plural": "",
+                  "system": "none",
+                  "name": "",
+                  "abbreviation": ""
+                }
+              }
+            ],
+            "ingredient": {
+              "display_singular": "freshly ground black pepper",
+              "display_plural": "freshly ground black peppers",
+              "created_at": 1493925438,
+              "updated_at": 1509035282,
+              "id": 166,
+              "name": "freshly ground black pepper"
+            }
+          }
+        ],
+        "name": null,
+        "position": 1
+      }
+    ],
+    "canonical_id": "recipe:8138",
+    "show": {
+      "id": 17,
+      "name": "Tasty"
+    },
+    "price": {
+      "updated_at": "2023-04-05T07:29:02+02:00",
+      "total": 1150,
+      "portion": 300,
+      "consumption_total": 500,
+      "consumption_portion": 150
+    },
+    "brand_id": null,
+    "video_id": null,
+    "brand": null,
+    "instructions": [
+      {
+        "id": 70871,
+        "display_text": "Melt the butter in a large pot over medium-high heat. When the butter is foaming, add the leeks, carrots, and garlic and cook, stirring frequently, until softened, 6–7 minutes. Transfer half of the sautéed vegetables to a small bowl.",
+        "position": 1,
+        "start_time": 0,
+        "end_time": 0,
+        "temperature": null,
+        "appliance": null
+      },
+      {
+        "appliance": null,
+        "id": 70872,
+        "display_text": "Add the potatoes, turmeric, curry powder, and chicken broth to the pot with the remaining vegetables. Bring to a boil over high heat, then reduce the heat to medium-low and simmer for 8–10 minutes, or until the potatoes are tender.",
+        "position": 2,
+        "start_time": 0,
+        "end_time": 0,
+        "temperature": null
+      },
+      {
+        "id": 70873,
+        "display_text": "Transfer the soup to a standing blender or (use an immersion blender directly in the pot) and purée until smooth (work in batches if necessary and let cool slightly before blending the liquid). Return the soup to the pot.",
+        "position": 3,
+        "start_time": 0,
+        "end_time": 0,
+        "temperature": null,
+        "appliance": null
+      },
+      {
+        "end_time": 0,
+        "temperature": null,
+        "appliance": null,
+        "id": 70874,
+        "display_text": "Stir in the Campbell's® Cream of Chicken Soup and bring to a boil.",
+        "position": 4,
+        "start_time": 0
+      },
+      {
+        "temperature": null,
+        "appliance": null,
+        "id": 70875,
+        "display_text": "Remove the pot from the heat and stir in the reserved vegetables and half of the parsley. Season with salt and pepper to taste.",
+        "position": 5,
+        "start_time": 0,
+        "end_time": 0
+      },
+      {
+        "display_text": "Ladle the soup into bowls and garnish with the remaining parsley.",
+        "position": 6,
+        "start_time": 0,
+        "end_time": 0,
+        "temperature": null,
+        "appliance": null,
+        "id": 70876
+      },
+      {
+        "position": 7,
+        "start_time": 0,
+        "end_time": 0,
+        "temperature": null,
+        "appliance": null,
+        "id": 70877,
+        "display_text": "Enjoy!"
+      }
+    ],
+    "servings_noun_plural": "servings",
+    "slug": "curried-potato-leek-soup",
+    "compilations": [],
+    "total_time_tier": null,
+    "draft_status": "published",
+    "is_shoppable": true,
+    "keywords": "",
+    "num_servings": 4,
+    "nutrition": {
+      "fat": 72,
+      "protein": 20,
+      "sugar": 15,
+      "fiber": 5,
+      "updated_at": "2022-03-05T07:01:42+01:00",
+      "calories": 1157,
+      "carbohydrates": 104
+    }
+  }
