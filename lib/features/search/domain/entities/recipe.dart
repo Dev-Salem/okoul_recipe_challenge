@@ -1,13 +1,14 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 import 'package:okoul_recipe_challenge/features/search/domain/entities/ingredient.dart';
+import 'package:okoul_recipe_challenge/features/search/domain/entities/instruction.dart';
+import 'package:okoul_recipe_challenge/features/search/domain/entities/rating.dart';
 
 class Recipe extends Equatable {
   final String name;
   final int id;
   final String imageURL;
-  final List<String> instructions;
-  final double rating;
+  final List<Instruction> instructions;
+  final Rating rating;
   final List<Ingredient> ingredients;
 
   const Recipe({
@@ -30,4 +31,21 @@ class Recipe extends Equatable {
       ingredients,
     ];
   }
+/*
+  factory Recipe.formJson(Map<String, dynamic> json) {
+    var listOfIngredients = json['sections'][0]['components'] as List;
+    List<Ingredient> ingredients =
+        listOfIngredients.map((e) => Ingredient.fromMap(e)).toList();
+    var listOfInstructions = json['instructions'] as List;
+    List<Instruction> instructions =
+        listOfInstructions.map((e) => Instruction.fromMap(e)).toList();
+    return Recipe(
+        name: json['name'],
+        id: json['id'],
+        imageURL: json['thumbnail_url'],
+        instructions: instructions,
+        rating: Rating.fromMap(json['user_ratings']),
+        ingredients: ingredients);
+  }
+*/
 }
