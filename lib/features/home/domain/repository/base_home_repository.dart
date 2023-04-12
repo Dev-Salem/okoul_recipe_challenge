@@ -1,6 +1,6 @@
-import 'package:okoul_recipe_challenge/core/type_defs/type_defs.dart';
+import 'package:okoul_recipe_challenge/core/utils/type_defs.dart';
 
-abstract class BaseSearchRepository {
+abstract class BaseHomeRepository {
   EitherRecipeList getRecipeListByQuery(String query); //search specific recipes
   EitherRecipeList getRecipeList(); //return a feed for the home page
 }

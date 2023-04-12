@@ -18,7 +18,6 @@ class DioRemoteDataSource implements BaseRemoteDataSource {
       '${ApiConstance.baseURL}list',
       queryParameters: {'from': '0', 'size': '20', 'q': query},
     );
-    print(response.data['count']);
     if (response.statusCode == 200) {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {
@@ -31,7 +30,6 @@ class DioRemoteDataSource implements BaseRemoteDataSource {
   Future<RecipeCardsListModel> getRecipeList() async {
     final response = await dio.get('${ApiConstance.baseURL}get-more-info',
         queryParameters: {'from': '0', 'size': '20'});
-    print(response.data['count']);
     if (response.statusCode == 200) {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:okoul_recipe_challenge/core/network/api_constance.dart';
+import 'package:okoul_recipe_challenge/core/theme/custom_theme.dart';
 import 'package:okoul_recipe_challenge/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:okoul_recipe_challenge/features/home/data/models/recipe_list_model.dart';
 import 'package:okoul_recipe_challenge/features/home/data/models/recipe_model.dart';
@@ -10,6 +11,7 @@ import 'dart:convert';
 
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_cards_list.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,23 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomePage(),
+      theme: customTheme,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Text('Hello world'));
-  }
-}
 
 // httpCall() async {
 //   final dio = Dio();
