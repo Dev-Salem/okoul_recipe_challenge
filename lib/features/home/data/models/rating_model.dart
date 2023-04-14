@@ -10,7 +10,7 @@ class RatingModel extends Rating {
     return RatingModel(
       countPositive: map['count_positive'] as int,
       countNegative: map['count_negative'] as int,
-      score: map['score'] as num,
+      score: map['score'] == null ? 0 : map['score'] as num,
     );
   }
 

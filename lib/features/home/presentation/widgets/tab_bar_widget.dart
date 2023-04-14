@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
 
-class TabBarWidget extends StatefulWidget {
+class TabBarWidget extends StatelessWidget {
+  final TabController tabController;
   const TabBarWidget({
+    required this.tabController,
     super.key,
   });
 
   @override
-  State<TabBarWidget> createState() => _TabBarWidgetState();
-}
-
-class _TabBarWidgetState extends State<TabBarWidget>
-    with SingleTickerProviderStateMixin {
-  late final TabController _tabController;
-  @override
-  void initState() {
-    _tabController = TabController(length: 2, vsync: this);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return TabBar(
-        controller: _tabController,
-        tabs: [Text("Home Page"), Text("Favorite")]);
+    return SizedBox(
+      height: 50,
+      child: TabBar(controller: tabController, tabs: [
+        Container(
+            alignment: Alignment.center,
+            width: 110,
+            height: 100,
+            child: const Text(
+              "Home Page",
+            )),
+        Container(
+            alignment: Alignment.center,
+            width: 90,
+            height: 100,
+            child: const Text("Favorite"))
+      ]),
+    );
   }
 }

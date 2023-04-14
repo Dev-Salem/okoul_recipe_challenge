@@ -11,5 +11,8 @@ class Rating extends Equatable {
   });
 
   @override
-  List<Object> get props => [countPositive, countNegative, score];
+  List<Object> get props => [
+        countPositive,
+        countNegative,
+      ];
 }

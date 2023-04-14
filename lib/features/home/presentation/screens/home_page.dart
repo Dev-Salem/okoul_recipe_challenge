@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/search_bar_widget.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/widgets/tab_bar_view_widget.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/tab_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,7 +10,25 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  late final TextEditingController textEditingController;
+  late final TabController tabController;
+
+  @override
+  void initState() {
+    textEditingController = TextEditingController();
+    tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    textEditingController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,11 +36,23 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SearchBarWidget(),
-            SizedBox(
-              height: 50,
+            SearchBarWidget(
+              textEditingController: textEditingController,
             ),
-            TabBarWidget()
+            const SizedBox(
+              height: 20,
+            ),
+            TabBarWidget(
+              tabController: tabController,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: TabBarViewWidget(
+                tabController: tabController,
+              ),
+            )
           ],
         ),
       ),

@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
-import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_cards_list.dart';
 
 class HomeStates extends Equatable {
   final RequestState requestState;

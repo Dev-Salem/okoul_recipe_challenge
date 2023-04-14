@@ -1,36 +1,21 @@
 import 'package:flutter/material.dart';
 
-class SearchBarWidget extends StatefulWidget {
+class SearchBarWidget extends StatelessWidget {
+  final TextEditingController textEditingController;
   const SearchBarWidget({
+    required this.textEditingController,
     super.key,
   });
 
   @override
-  State<SearchBarWidget> createState() => _SearchBarWidgetState();
-}
-
-class _SearchBarWidgetState extends State<SearchBarWidget> {
-  late final TextEditingController textEditingController;
-  @override
-  void initState() {
-    textEditingController = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    textEditingController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20, left: 25),
-      width: 300,
-      height: 50,
-      child: TextFormField(
+      margin: const EdgeInsets.only(top: 20, left: 25, right: 25),
+      width: double.infinity,
+      height: 70,
+      child: TextField(
         decoration: const InputDecoration(
+          hintText: "Search Anything..",
           prefixIcon: Icon(Icons.search),
         ),
         controller: textEditingController,
