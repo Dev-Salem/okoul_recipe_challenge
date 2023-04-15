@@ -4,33 +4,60 @@ import 'package:equatable/equatable.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
 
-class HomeStates extends Equatable {
-  final RequestState requestState;
+class HomeState extends Equatable {
+  final ShowResult page;
+
+  //States of get recipe card by query use_case
+  final List<RecipeCard> recipeCardsByQuery;
+  final RequestState recipeCardsByQueryState;
+  final String recipeCardsByQueryMessage;
+
+  //States of get recipe card by query use_case
   final List<RecipeCard> recipeCardsList;
-  final String errorMessage;
+  final RequestState recipeCardsListState;
+  final String recipeCardsListErrorMessage;
 
-  const HomeStates(
-      {this.requestState = RequestState.loading,
-      this.recipeCardsList = const [],
-      this.errorMessage = ''});
+  const HomeState({
+    this.page = ShowResult.feed,
+    this.recipeCardsByQuery = const [],
+    this.recipeCardsByQueryState = RequestState.loading,
+    this.recipeCardsByQueryMessage = '',
+    this.recipeCardsList = const [],
+    this.recipeCardsListState = RequestState.loading,
+    this.recipeCardsListErrorMessage = '',
+  });
+
   @override
-  List<Object?> get props => [requestState, recipeCardsList, errorMessage];
-
-  HomeStates copyWith(
-      {RequestState? requestState,
-      List<RecipeCard>? recipeCardsList,
-      String? errorMessage}) {
-    return HomeStates(
-        requestState: requestState ?? this.requestState,
-        recipeCardsList: recipeCardsList ?? this.recipeCardsList,
-        errorMessage: errorMessage ?? this.errorMessage);
+  List<Object> get props {
+    return [
+      page,
+      recipeCardsByQuery,
+      recipeCardsByQueryState,
+      recipeCardsByQueryMessage,
+      recipeCardsList,
+      recipeCardsListState,
+      recipeCardsListErrorMessage,
+    ];
   }
-}
 
-class RecipeListState extends HomeStates {
-  const RecipeListState();
-}
-
-class RecipeListFromQueryState extends HomeStates {
-  const RecipeListFromQueryState();
+  HomeState copyWith(
+      {List<RecipeCard>? recipeCardsByQuery,
+      RequestState? recipeCardsByQueryState,
+      String? recipeCardsByQueryMessage,
+      List<RecipeCard>? recipeCardsList,
+      RequestState? recipeCardsListState,
+      String? recipeCardsListErrorMessage,
+      ShowResult? page}) {
+    return HomeState(
+        recipeCardsByQuery: recipeCardsByQuery ?? this.recipeCardsByQuery,
+        recipeCardsByQueryState:
+            recipeCardsByQueryState ?? this.recipeCardsByQueryState,
+        recipeCardsByQueryMessage:
+            recipeCardsByQueryMessage ?? this.recipeCardsByQueryMessage,
+        recipeCardsList: recipeCardsList ?? this.recipeCardsList,
+        recipeCardsListState: recipeCardsListState ?? this.recipeCardsListState,
+        recipeCardsListErrorMessage:
+            recipeCardsListErrorMessage ?? this.recipeCardsListErrorMessage,
+        page: page ?? this.page);
+  }
 }

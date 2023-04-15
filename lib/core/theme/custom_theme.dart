@@ -25,7 +25,7 @@ final customTheme = ThemeData.dark().copyWith(
         prefixIconColor: Colors.white.withOpacity(0.4),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: AppColors.lightColor,
             )),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(25))));

@@ -1,3 +1,3 @@
-enum RequestState { loading, loaded, error }
+enum RequestState { loading, loaded, error, noItems }
 
-enum RatingState { num, String }
+enum ShowResult { feed, query }

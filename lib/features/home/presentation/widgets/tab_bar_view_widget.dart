@@ -1,11 +1,12 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:okoul_recipe_challenge/core/utils/enums.dart';
+import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_states.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/recipe_card_widget.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'dart:async' show Future;
-
-import '../../data/models/recipe_list_model.dart';
 
 class TabBarViewWidget extends StatelessWidget {
   final TabController tabController;
@@ -14,26 +15,39 @@ class TabBarViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBarView(controller: tabController, children: [
-      FutureBuilder(
-        future: loadRecipe(),
-        initialData: const [],
-        builder: (context, snapshot) {
-          final data = snapshot.data;
-          return GridView.builder(
-            itemCount: data.length,
-            itemBuilder: (context, index) => RecipeCardWidget(
-                name: data[index].name,
-                imageURL: data[index].imageURL,
-                rating: data[index].rating.score),
-            addRepaintBoundaries: false,
-            clipBehavior: Clip.none,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 0.65,
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10),
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-          );
+      BlocBuilder<HomeFeatureBloc, HomeState>(
+        buildWhen: (previous, current) => previous != current,
+        builder: (context, state) {
+          bool isFeed = state.page == ShowResult.feed;
+          switch (isFeed
+              ? state.recipeCardsListState
+              : state.recipeCardsByQueryState) {
+            case RequestState.loading:
+              return const SizedBox(
+                height: 400,
+                child: Center(child: CircularProgressIndicator()),
+              );
+            case RequestState.error:
+              return Center(
+                  child: Text(
+                isFeed
+                    ? state.recipeCardsListErrorMessage
+                    : state.recipeCardsByQueryMessage,
+                style: const TextStyle(fontSize: 50),
+              ));
+
+            case RequestState.loaded:
+              return CardItems(
+                  recipes: isFeed
+                      ? state.recipeCardsList
+                      : state.recipeCardsByQuery);
+            case RequestState.noItems:
+              Fluttertoast.showToast(msg: "No More Recipes Left");
+              return CardItems(
+                  recipes: isFeed
+                      ? state.recipeCardsList
+                      : state.recipeCardsByQuery);
+          }
         },
       ),
       const Text('HI 2')
@@ -41,15 +55,55 @@ class TabBarViewWidget extends StatelessWidget {
   }
 }
 
-Future<String> loadRecipeJson() async {
-  return await rootBundle.loadString('assets/recipe_list_from_query.json');
+class CardItems extends StatefulWidget {
+  final List<RecipeCard> recipes;
+  const CardItems({super.key, required this.recipes});
+
+  @override
+  State<CardItems> createState() => _CardItemsState();
 }
 
-Future loadRecipe() async {
-  String jsonString = await loadRecipeJson();
-  final jsonRespone = json.decode(jsonString);
-  RecipeCardsListModel myRecipes =
-      RecipeCardsListModel.fromJson(jsonRespone['results']);
-  print(myRecipes.recipes[0].imageURL);
-  return myRecipes.recipes;
+class _CardItemsState extends State<CardItems> {
+  final ScrollController _scrollController = ScrollController();
+  @override
+  void initState() {
+    _scrollController.addListener(onScroll);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void onScroll() {
+    if (_scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent * 0.9) {
+      Future.delayed(const Duration(seconds: 10), () {
+        BlocProvider.of<HomeFeatureBloc>(context)
+            .add(const GetRecipeListEvent());
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      controller: _scrollController,
+      itemCount: widget.recipes.length,
+      itemBuilder: (context, index) => RecipeCardWidget(
+          name: widget.recipes[index].name,
+          imageURL: widget.recipes[index].imageURL,
+          rating: widget.recipes[index].rating.score),
+      addRepaintBoundaries: false,
+      clipBehavior: Clip.none,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.65,
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+    );
+  }
 }

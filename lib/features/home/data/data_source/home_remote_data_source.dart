@@ -5,18 +5,20 @@ import 'package:okoul_recipe_challenge/core/network/error_message.dart';
 import 'package:okoul_recipe_challenge/features/home/data/models/recipe_list_model.dart';
 
 abstract class BaseRemoteDataSource {
-  Future<RecipeCardsListModel> getRecipeListByQuery(String query);
-  Future<RecipeCardsListModel> getRecipeList();
+  Future<RecipeCardsListModel> getRecipeListByQuery(
+      String query, int from, int to);
+  Future<RecipeCardsListModel> getRecipeList(int from, int to);
 }
 
-class DioRemoteDataSource implements BaseRemoteDataSource {
+class DioRemoteDataSource extends BaseRemoteDataSource {
   final dio = createDioObject();
 
   @override
-  Future<RecipeCardsListModel> getRecipeListByQuery(String query) async {
+  Future<RecipeCardsListModel> getRecipeListByQuery(
+      String query, int from, int to) async {
     final response = await dio.get(
       '${ApiConstance.baseURL}list',
-      queryParameters: {'from': '0', 'size': '20', 'q': query},
+      queryParameters: {'from': '$from', 'size': '$to', 'q': query},
     );
     if (response.statusCode == 200) {
       return RecipeCardsListModel.fromJson(response.data['results']);
@@ -27,9 +29,12 @@ class DioRemoteDataSource implements BaseRemoteDataSource {
   }
 
   @override
-  Future<RecipeCardsListModel> getRecipeList() async {
-    final response = await dio.get('${ApiConstance.baseURL}get-more-info',
-        queryParameters: {'from': '0', 'size': '20'});
+  Future<RecipeCardsListModel> getRecipeList(int from, int to) async {
+    final response =
+        await dio.get('${ApiConstance.baseURL}list', queryParameters: {
+      'from': '$from',
+      'size': '$to',
+    });
     if (response.statusCode == 200) {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {
