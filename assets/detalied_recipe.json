@@ -1,0 +1,425 @@
+{
+    "user_ratings": {
+        "count_positive": 6,
+        "count_negative": 0,
+        "score": 1
+    },
+    "id": 8138,
+    "name": "Curried Potato Leek Soup",
+    "thumbnail_url": "https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/1308cc4ac878420da65b1423001a9dbd.jpeg",
+    "sections": [
+        {
+            "position": 1,
+            "components": [
+                {
+                    "measurements": [
+                        {
+                            "quantity": "2",
+                            "unit": {
+                                "display_singular": "tablespoon",
+                                "display_plural": "tablespoons",
+                                "system": "imperial",
+                                "name": "tablespoon",
+                                "abbreviation": "tbsp"
+                            },
+                            "id": 684423
+                        }
+                    ],
+                    "ingredient": {
+                        "created_at": 1494806355,
+                        "updated_at": 1509035272,
+                        "id": 291,
+                        "name": "unsalted butter",
+                        "display_singular": "unsalted butter",
+                        "display_plural": "unsalted butters"
+                    },
+                    "id": 92885,
+                    "raw_text": "2 tablespoons unsalted butter",
+                    "extra_comment": "",
+                    "position": 1
+                },
+                {
+                    "ingredient": {
+                        "id": 3749,
+                        "name": "leek",
+                        "display_singular": "leek",
+                        "display_plural": "leeks",
+                        "created_at": 1518779021,
+                        "updated_at": 1518779021
+                    },
+                    "id": 92886,
+                    "raw_text": "1 leek, white and light green parts only, thinly sliced",
+                    "extra_comment": "white and light green parts only, thinly sliced",
+                    "position": 2,
+                    "measurements": [
+                        {
+                            "id": 684432,
+                            "quantity": "1",
+                            "unit": {
+                                "name": "",
+                                "abbreviation": "",
+                                "display_singular": "",
+                                "display_plural": "",
+                                "system": "none"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "position": 3,
+                    "measurements": [
+                        {
+                            "id": 684425,
+                            "quantity": "1",
+                            "unit": {
+                                "name": "",
+                                "abbreviation": "",
+                                "display_singular": "",
+                                "display_plural": "",
+                                "system": "none"
+                            }
+                        }
+                    ],
+                    "ingredient": {
+                        "display_plural": "large carrots",
+                        "created_at": 1495688206,
+                        "updated_at": 1509035236,
+                        "id": 755,
+                        "name": "large carrot",
+                        "display_singular": "large carrot"
+                    },
+                    "id": 92887,
+                    "raw_text": "1 large carrot, small diced",
+                    "extra_comment": "small diced"
+                },
+                {
+                    "position": 4,
+                    "measurements": [
+                        {
+                            "id": 684427,
+                            "quantity": "2",
+                            "unit": {
+                                "system": "none",
+                                "name": "clove",
+                                "abbreviation": "clove",
+                                "display_singular": "clove",
+                                "display_plural": "cloves"
+                            }
+                        }
+                    ],
+                    "ingredient": {
+                        "created_at": 1493744766,
+                        "updated_at": 1509035285,
+                        "id": 95,
+                        "name": "garlic",
+                        "display_singular": "garlic",
+                        "display_plural": "garlics"
+                    },
+                    "id": 92888,
+                    "raw_text": "2 garlic cloves, roughly chopped",
+                    "extra_comment": "roughly chopped"
+                },
+                {
+                    "position": 5,
+                    "measurements": [
+                        {
+                            "id": 684421,
+                            "quantity": "2",
+                            "unit": {
+                                "display_singular": "",
+                                "display_plural": "",
+                                "system": "none",
+                                "name": "",
+                                "abbreviation": ""
+                            }
+                        }
+                    ],
+                    "ingredient": {
+                        "id": 3308,
+                        "name": "yukon gold potato",
+                        "display_singular": "yukon gold potato",
+                        "display_plural": "yukon gold potatoes",
+                        "created_at": 1512014380,
+                        "updated_at": 1512014380
+                    },
+                    "id": 92889,
+                    "raw_text": "2 Yukon gold potatoes, cut into ½-inch pieces",
+                    "extra_comment": "cut into 1/2 (1.24 cm) pieces"
+                },
+                {
+                    "extra_comment": "",
+                    "position": 6,
+                    "measurements": [
+                        {
+                            "id": 684422,
+                            "quantity": "1",
+                            "unit": {
+                                "name": "teaspoon",
+                                "abbreviation": "tsp",
+                                "display_singular": "teaspoon",
+                                "display_plural": "teaspoons",
+                                "system": "imperial"
+                            }
+                        }
+                    ],
+                    "ingredient": {
+                        "updated_at": 1509035196,
+                        "id": 1293,
+                        "name": "ground turmeric",
+                        "display_singular": "ground turmeric",
+                        "display_plural": "ground turmerics",
+                        "created_at": 1496674140
+                    },
+                    "id": 92890,
+                    "raw_text": "1 teaspoon ground turmeric"
+                },
+                {
+                    "raw_text": "1 tablespoon yellow curry powder",
+                    "extra_comment": "",
+                    "position": 7,
+                    "measurements": [
+                        {
+                            "quantity": "1",
+                            "unit": {
+                                "name": "tablespoon",
+                                "abbreviation": "tbsp",
+                                "display_singular": "tablespoon",
+                                "display_plural": "tablespoons",
+                                "system": "imperial"
+                            },
+                            "id": 684426
+                        }
+                    ],
+                    "ingredient": {
+                        "name": "yellow curry powder",
+                        "display_singular": "yellow curry powder",
+                        "display_plural": "yellow curry powders",
+                        "created_at": 1646319116,
+                        "updated_at": 1646319116,
+                        "id": 9611
+                    },
+                    "id": 92891
+                },
+                {
+                    "measurements": [
+                        {
+                            "id": 684430,
+                            "quantity": "960",
+                            "unit": {
+                                "name": "liter",
+                                "abbreviation": "L",
+                                "display_singular": "L",
+                                "display_plural": "L",
+                                "system": "metric"
+                            }
+                        },
+                        {
+                            "quantity": "4",
+                            "unit": {
+                                "name": "cup",
+                                "abbreviation": "c",
+                                "display_singular": "cup",
+                                "display_plural": "cups",
+                                "system": "imperial"
+                            },
+                            "id": 684429
+                        }
+                    ],
+                    "ingredient": {
+                        "id": 218,
+                        "name": "chicken broth",
+                        "display_singular": "chicken broth",
+                        "display_plural": "chicken broths",
+                        "created_at": 1494212911,
+                        "updated_at": 1509035278
+                    },
+                    "id": 92892,
+                    "raw_text": "4 cups (32 ounces) chicken broth",
+                    "extra_comment": "",
+                    "position": 8
+                },
+                {
+                    "position": 9,
+                    "measurements": [
+                        {
+                            "unit": {
+                                "name": "can",
+                                "abbreviation": "can",
+                                "display_singular": "can",
+                                "display_plural": "cans",
+                                "system": "none"
+                            },
+                            "id": 684428,
+                            "quantity": "2"
+                        }
+                    ],
+                    "ingredient": {
+                        "id": 9323,
+                        "name": "Campbell's® Cream of Chicken Soup",
+                        "display_singular": "Campbell's® cream of chicken soup",
+                        "display_plural": "Campbell's® creams of chicken soup",
+                        "created_at": 1636637078,
+                        "updated_at": 1636637078
+                    },
+                    "id": 92893,
+                    "raw_text": "2 10.5-ounce cans of Campbell's® Cream of Chicken Soup",
+                    "extra_comment": ""
+                },
+                {
+                    "ingredient": {
+                        "created_at": 1493906396,
+                        "updated_at": 1509035283,
+                        "id": 154,
+                        "name": "fresh parsley",
+                        "display_singular": "fresh parsley",
+                        "display_plural": "fresh parsleys"
+                    },
+                    "id": 92894,
+                    "raw_text": "2 tablespoons chopped fresh parsley, divided",
+                    "extra_comment": "divided",
+                    "position": 10,
+                    "measurements": [
+                        {
+                            "id": 684431,
+                            "quantity": "2",
+                            "unit": {
+                                "display_plural": "tablespoons",
+                                "system": "imperial",
+                                "name": "tablespoon",
+                                "abbreviation": "tbsp",
+                                "display_singular": "tablespoon"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "raw_text": "Kosher salt, to taste",
+                    "extra_comment": "to taste",
+                    "position": 11,
+                    "measurements": [
+                        {
+                            "id": 684424,
+                            "quantity": "0",
+                            "unit": {
+                                "name": "",
+                                "abbreviation": "",
+                                "display_singular": "",
+                                "display_plural": "",
+                                "system": "none"
+                            }
+                        }
+                    ],
+                    "ingredient": {
+                        "id": 11,
+                        "name": "kosher salt",
+                        "display_singular": "kosher salt",
+                        "display_plural": "kosher salts",
+                        "created_at": 1493307153,
+                        "updated_at": 1509035289
+                    },
+                    "id": 92895
+                },
+                {
+                    "id": 92896,
+                    "raw_text": "Freshly ground black pepper, to taste",
+                    "extra_comment": "to taste",
+                    "position": 12,
+                    "measurements": [
+                        {
+                            "id": 684433,
+                            "quantity": "0",
+                            "unit": {
+                                "abbreviation": "",
+                                "display_singular": "",
+                                "display_plural": "",
+                                "system": "none",
+                                "name": ""
+                            }
+                        }
+                    ],
+                    "ingredient": {
+                        "id": 166,
+                        "name": "freshly ground black pepper",
+                        "display_singular": "freshly ground black pepper",
+                        "display_plural": "freshly ground black peppers",
+                        "created_at": 1493925438,
+                        "updated_at": 1509035282
+                    }
+                }
+            ],
+            "name": null
+        }
+    ],
+    "instructions": [
+        {
+            "appliance": null,
+            "id": 70871,
+            "display_text": "Melt the butter in a large pot over medium-high heat. When the butter is foaming, add the leeks, carrots, and garlic and cook, stirring frequently, until softened, 6–7 minutes. Transfer half of the sautéed vegetables to a small bowl.",
+            "position": 1,
+            "start_time": 0,
+            "end_time": 0
+            
+        },
+        {
+            "start_time": 0,
+            "end_time": 0,
+            "temperature": null,
+            "appliance": null,
+            "id": 70872,
+            "display_text": "Add the potatoes, turmeric, curry powder, and chicken broth to the pot with the remaining vegetables. Bring to a boil over high heat, then reduce the heat to medium-low and simmer for 8–10 minutes, or until the potatoes are tender.",
+            "position": 2
+        },
+        {
+            "appliance": null,
+            "id": 70873,
+            "display_text": "Transfer the soup to a standing blender or (use an immersion blender directly in the pot) and purée until smooth (work in batches if necessary and let cool slightly before blending the liquid). Return the soup to the pot.",
+            "position": 3,
+            "start_time": 0,
+            "end_time": 0,
+            "temperature": null
+        },
+        {
+            "end_time": 0,
+            "temperature": null,
+            "appliance": null,
+            "id": 70874,
+            "display_text": "Stir in the Campbell's® Cream of Chicken Soup and bring to a boil.",
+            "position": 4,
+            "start_time": 0
+        },
+        {
+            "id": 70875,
+            "display_text": "Remove the pot from the heat and stir in the reserved vegetables and half of the parsley. Season with salt and pepper to taste.",
+            "position": 5,
+            "start_time": 0,
+            "end_time": 0,
+            "temperature": null,
+            "appliance": null
+        },
+        {
+            "id": 70876,
+            "display_text": "Ladle the soup into bowls and garnish with the remaining parsley.",
+            "position": 6,
+            "start_time": 0,
+            "end_time": 0,
+            "temperature": null,
+            "appliance": null
+        },
+        {
+            "appliance": null,
+            "id": 70877,
+            "display_text": "Enjoy!",
+            "position": 7,
+            "start_time": 0,
+            "end_time": 0,
+            "temperature": null
+        }
+    ],
+    "price": {
+        "consumption_total": 500,
+        "consumption_portion": 150,
+        "updated_at": "2023-04-05T07:29:02+02:00",
+        "total": 1150,
+        "portion": 300
+    }
+}

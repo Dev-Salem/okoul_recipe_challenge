@@ -10,6 +10,10 @@ class SearchBarWidget extends StatelessWidget {
     super.key,
   });
 
+  String getQueryValue() {
+    return textEditingController.text;
+  }
+
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<HomeFeatureBloc>(context);
@@ -20,7 +24,7 @@ class SearchBarWidget extends StatelessWidget {
       child: TextField(
         onSubmitted: (value) {
           print(value);
-          bloc.add(GetRecipeListByQueryEvent(value));
+          bloc.add(GetSearchedRecipesEvent(query: value));
         },
         decoration: const InputDecoration(
           hintText: "Search Anything..",

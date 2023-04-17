@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:okoul_recipe_challenge/core/services/service_locator.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/screens/feed_tab.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/screens/search_tab.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/search_bar_widget.dart';
-import 'package:okoul_recipe_challenge/features/home/presentation/widgets/tab_bar_view_widget.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/tab_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     textEditingController = TextEditingController();
-    tabController = TabController(length: 2, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
     super.initState();
   }
 
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          sl<HomeFeatureBloc>()..add(const GetRecipeListEvent()),
+          sl<HomeFeatureBloc>()..add(const GetFeedRecipesEvent()),
       child: SafeArea(
         child: Scaffold(
           body: Column(
@@ -56,10 +57,13 @@ class _HomePageState extends State<HomePage>
                 height: 20,
               ),
               Expanded(
-                child: TabBarViewWidget(
-                  tabController: tabController,
+                  child: TabBarView(controller: tabController, children: [
+                const FeedTab(),
+                SearchTab(
+                  controller: textEditingController,
                 ),
-              )
+                const Text("hi 2")
+              ]))
             ],
           ),
         ),

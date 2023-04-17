@@ -23,7 +23,12 @@ class TabBarWidget extends StatelessWidget {
             alignment: Alignment.center,
             width: 90,
             height: 100,
-            child: const Text("Favorite"))
+            child: const Text("Search")),
+        Container(
+            alignment: Alignment.center,
+            width: 90,
+            height: 100,
+            child: const Text("Favorite")),
       ]),
     );
   }

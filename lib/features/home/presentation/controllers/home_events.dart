@@ -7,12 +7,17 @@ class HomeEvents extends Equatable {
   List<Object?> get props => [];
 }
 
-class GetRecipeListEvent extends HomeEvents {
-  const GetRecipeListEvent();
+class GetFeedRecipesEvent extends HomeEvents {
+  const GetFeedRecipesEvent();
 }
 
-class GetRecipeListByQueryEvent extends HomeEvents {
+class GetSearchedRecipesEvent extends HomeEvents {
   final String query;
-  const GetRecipeListByQueryEvent(this.query);
-  
+  const GetSearchedRecipesEvent({
+    required this.query,
+  });
+}
+
+class ScrollFeedEvent extends HomeEvents {
+  const ScrollFeedEvent();
 }
