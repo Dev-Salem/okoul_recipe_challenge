@@ -17,7 +17,3 @@ class GetSearchedRecipesEvent extends HomeEvents {
     required this.query,
   });
 }
-
-class ScrollFeedEvent extends HomeEvents {
-  const ScrollFeedEvent();
-}

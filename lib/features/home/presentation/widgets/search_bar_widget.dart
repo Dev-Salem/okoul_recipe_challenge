@@ -23,7 +23,6 @@ class SearchBarWidget extends StatelessWidget {
       height: 70,
       child: TextField(
         onSubmitted: (value) {
-          print(value);
           bloc.add(GetSearchedRecipesEvent(query: value));
         },
         decoration: const InputDecoration(

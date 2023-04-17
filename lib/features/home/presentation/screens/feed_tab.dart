@@ -26,8 +26,6 @@ class FeedTab extends StatelessWidget {
               recipes: state.feedRecipesList,
               isFeed: true,
             );
-          case RequestState.scrolling:
-            return CardGridView(recipes: state.feedRecipesList, isFeed: true);
         }
       },
     );

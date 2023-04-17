@@ -34,8 +34,6 @@ class SearchTab extends StatelessWidget {
                     isFeed: false,
                     textEditingController: controller,
                   );
-          case RequestState.scrolling:
-            return Text('Scrolling');
         }
       },
     );

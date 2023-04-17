@@ -23,7 +23,6 @@ class DioRemoteDataSource extends BaseRemoteDataSource {
     if (response.statusCode == 200) {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {
-      print(response);
       throw NetworkException(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));
     }
@@ -39,7 +38,6 @@ class DioRemoteDataSource extends BaseRemoteDataSource {
     if (response.statusCode == 200) {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {
-      print(response);
       throw NetworkException(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));
     }

@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
@@ -65,41 +64,3 @@ class HomeState extends Equatable {
     );
   }
 }
-
-/*
-class HomeState extends Equatable {
-  final List<RecipeCard> recipesList;
-  final RequestState requestState;
-  final String errorMessage;
-  final bool recipesMaxLimit;
-
-  const HomeState(
-      {this.requestState = RequestState.loading,
-      this.recipesList = const [],
-      this.recipesMaxLimit = false,
-      this.errorMessage = ''});
-
-  @override
-  List<Object?> get props =>
-      [recipesList, requestState, errorMessage, recipesMaxLimit];
-
-  HomeState copyWith({
-    List<RecipeCard>? recipesList,
-    RequestState? requestState,
-    String? errorMessage,
-    bool? recipesMaxLimit,
-  }) {
-    return HomeState(
-      recipesList: recipesList ?? this.recipesList,
-      requestState: requestState ?? this.requestState,
-      errorMessage: errorMessage ?? this.errorMessage,
-      recipesMaxLimit: recipesMaxLimit ?? this.recipesMaxLimit,
-    );
-  }
-}
-
-class FeedState extends HomeState {}
-
-class SearchState extends HomeState{}
-
-*/

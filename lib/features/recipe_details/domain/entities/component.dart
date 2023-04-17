@@ -11,17 +11,7 @@ class Component extends Equatable {
     required this.step,
   });
 /*
-  factory Component.fromJson(Map<String, dynamic> json) {
-    return Component(
-      ingredientDescription:
-          json['raw_text'] == null ? "" : json['raw_text'] as String,
-      step: json['position'] as int,
-    );
-  }
-
-  @override
-  String toString() =>
-      'Component(ingredientDescription: $ingredientDescription, step: $step)';
+  
 */
 
   @override

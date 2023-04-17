@@ -10,13 +10,7 @@ class Instruction extends Equatable {
     required this.step,
   });
 /*
-  factory Instruction.fromJson(Map<String, dynamic> json) {
-    return Instruction(
-      instructionDescription:
-          json['display_text'] == null ? "" : json['display_text'] as String,
-      step: json['position'] as int,
-    );
-  }
+  
 
   @override
   String toString() =>

@@ -9,18 +9,7 @@ class Sections extends Equatable {
     required this.components,
   });
 /*
-  factory Sections.fromJson(Map<String, dynamic> json) {
-    return Sections(
-      components: List<Component>.from(
-        (json['components'] as List<dynamic>).map<Component>(
-          (x) => Component.fromJson(x as Map<String, dynamic>),
-        ),
-      ),
-    );
-  }
-
-  @override
-  String toString() => 'Sections(components: $components)';
+ 
 */
 
   @override
