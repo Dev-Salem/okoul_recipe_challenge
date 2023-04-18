@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:okoul_recipe_challenge/core/services/service_locator.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
-import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_states.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/feed_tab.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/search_tab.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/search_bar_widget.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/tab_bar_widget.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_events.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/screens/recipe_details_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,9 +39,20 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          sl<HomeFeatureBloc>()..add(const GetFeedRecipesEvent()),
+    return BlocListener<HomeFeatureBloc, HomeState>(
+      listener: (context, state) {
+        if (state is GoToRecipeDetailsState) {
+          BlocProvider.of<RecipeDetailsBloc>(context)
+              .add(GetRecipeDetailsEvent(state.recipeId));
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+            return BlocProvider<HomeFeatureBloc>.value(
+              value: HomeFeatureBloc(
+                  recipeListUseCase: sl(), recipeListByQueryUseCase: sl()),
+              child: const RecipeDetailsScreen(),
+            );
+          }));
+        }
+      },
       child: SafeArea(
         child: Scaffold(
           body: Column(

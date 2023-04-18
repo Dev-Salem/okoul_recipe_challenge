@@ -62,15 +62,22 @@ class _CardGridViewState extends State<CardGridView> {
 
   @override
   Widget build(BuildContext context) {
-    scrollToTheEnd();
+    //scrollToTheEnd();
     return GridView.builder(
       controller: _scrollController,
       itemCount: widget.recipes.length,
       itemBuilder: (context, index) {
-        return RecipeCardWidget(
-            name: widget.recipes[index].name,
-            imageURL: widget.recipes[index].imageURL,
-            rating: widget.recipes[index].rating.score);
+        return InkWell(
+          onTap: () {
+            BlocProvider.of<HomeFeatureBloc>(context).add(
+                GoToRecipeDetailsScreenEvent(
+                    widget.recipes[index].id, widget.isFeed));
+          },
+          child: RecipeCardWidget(
+              name: widget.recipes[index].name,
+              imageURL: widget.recipes[index].imageURL,
+              rating: widget.recipes[index].rating.score),
+        );
       },
       addRepaintBoundaries: false,
       clipBehavior: Clip.none,

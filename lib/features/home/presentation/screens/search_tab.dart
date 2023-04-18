@@ -17,9 +17,7 @@ class SearchTab extends StatelessWidget {
       builder: (context, state) {
         switch (state.searchRequestState) {
           case RequestState.loading:
-            return state.searchRecipesList.isEmpty
-                ? const Center(child: Text("Start Searching"))
-                : const CustomProgressIndicator();
+            return const CustomProgressIndicator();
           case RequestState.error:
             return Center(
               child: Text(state.searchErrorMessage),
@@ -27,7 +25,7 @@ class SearchTab extends StatelessWidget {
           case RequestState.loaded:
             return state.searchRecipesList.isEmpty
                 ? const Center(
-                    child: Text('No Recipes Were Found'),
+                    child: Text("Nothing's Here, Start Searching"),
                   )
                 : CardGridView(
                     recipes: state.searchRecipesList,

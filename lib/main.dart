@@ -1,10 +1,11 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:okoul_recipe_challenge/core/network/api_constance.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:okoul_recipe_challenge/core/services/service_locator.dart';
 import 'package:okoul_recipe_challenge/core/theme/custom_theme.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
+import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/home_page.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const HomePage(),
-      theme: customTheme,
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+            create: (context) => HomeFeatureBloc(
+                recipeListUseCase: sl(), recipeListByQueryUseCase: sl())
+              ..add(const GetFeedRecipesEvent())),
+        BlocProvider(create: (context) => RecipeDetailsBloc(sl()))
+      ],
+      child: MaterialApp(
+        home: const HomePage(),
+        theme: customTheme,
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

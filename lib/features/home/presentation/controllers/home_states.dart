@@ -19,7 +19,7 @@ class HomeState extends Equatable {
 
   const HomeState({
     this.searchRecipesList = const [],
-    this.searchRequestState = RequestState.loading,
+    this.searchRequestState = RequestState.loaded,
     this.searchErrorMessage = '',
     this.searchMaxLimit = false,
     this.feedRecipesList = const [],
@@ -63,4 +63,9 @@ class HomeState extends Equatable {
       feedMaxLimit: feedMaxLimit ?? this.feedMaxLimit,
     );
   }
+}
+
+class GoToRecipeDetailsState extends HomeState {
+  final int recipeId;
+  const GoToRecipeDetailsState(this.recipeId);
 }

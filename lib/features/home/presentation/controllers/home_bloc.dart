@@ -14,6 +14,8 @@ class HomeFeatureBloc extends Bloc<HomeEvents, HomeState> {
       : super(const HomeState()) {
     on<GetFeedRecipesEvent>(_getFeedRecipes);
     on<GetSearchedRecipesEvent>(_getSearchedRecipes);
+    on<GoToRecipeDetailsScreenEvent>(_goToRecipeDetailsScreenEvent);
+    on<GoBackToHomeScreen>(_goBackToHomeScreen);
   }
 
   _getFeedRecipes(GetFeedRecipesEvent event, Emitter<HomeState> emitter) async {
@@ -59,4 +61,11 @@ class HomeFeatureBloc extends Bloc<HomeEvents, HomeState> {
       });
     }
   }
+
+  _goToRecipeDetailsScreenEvent(
+      GoToRecipeDetailsScreenEvent event, Emitter<HomeState> emitter) {
+    emitter(GoToRecipeDetailsState(event.recipeId));
+  }
+
+  _goBackToHomeScreen(GoBackToHomeScreen event, Emitter<HomeState> emitter) {}
 }

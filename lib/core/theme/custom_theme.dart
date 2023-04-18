@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 final customTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppColors.backgroundColor,
     primaryColor: AppColors.additionalColor,
+    cardColor: AppColors.secondaryBackgroundColor,
     colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.lightGreen),
     textTheme: GoogleFonts.dosisTextTheme(
         const TextTheme(headlineSmall: TextStyle(color: Colors.white))),
