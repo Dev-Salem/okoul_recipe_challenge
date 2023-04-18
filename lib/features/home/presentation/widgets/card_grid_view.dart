@@ -43,6 +43,7 @@ class _CardGridViewState extends State<CardGridView> {
     final bloc = BlocProvider.of<HomeFeatureBloc>(context);
     if (_scrollController.position.pixels >=
         _scrollController.position.maxScrollExtent * 0.95) {
+      //when the user reaches 95% of the page, retrieve more recipes
       if (widget.isFeed) {
         bloc.add(const GetFeedRecipesEvent());
       } else {
@@ -52,21 +53,13 @@ class _CardGridViewState extends State<CardGridView> {
     }
   }
 
-  scrollToTheEnd() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent / 2,
-            duration: const Duration(seconds: 1),
-            curve: Curves.easeIn);
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    //scrollToTheEnd();
     return GridView.builder(
+      key: widget.isFeed
+          ? const PageStorageKey(0)
+          : const PageStorageKey(
+              1), //Save the location of the scrolling position
       controller: _scrollController,
       itemCount: widget.recipes.length,
       itemBuilder: (context, index) {

@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => HomeFeatureBloc(
+            create: (_) => HomeFeatureBloc(
                 recipeListUseCase: sl(), recipeListByQueryUseCase: sl())
               ..add(const GetFeedRecipesEvent())),
-        BlocProvider(create: (context) => RecipeDetailsBloc(sl()))
+        BlocProvider(create: (_) => RecipeDetailsBloc(sl()))
       ],
       child: MaterialApp(
         home: const HomePage(),

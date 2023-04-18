@@ -12,6 +12,6 @@ class ImageShadowWidget extends StatelessWidget {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.black.withOpacity(0.5), Colors.transparent])));
+                colors: [Colors.black.withOpacity(0.7), Colors.transparent])));
   }
 }

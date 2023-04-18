@@ -17,7 +17,7 @@ class TabBarWidget extends StatelessWidget {
             width: 110,
             height: 100,
             child: const Text(
-              "Home Page",
+              "Feed",
             )),
         Container(
             alignment: Alignment.center,
