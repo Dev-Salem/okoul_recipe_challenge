@@ -12,7 +12,9 @@ import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widg
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/title_card_widget.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {
-  const RecipeDetailsScreen({super.key});
+  const RecipeDetailsScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

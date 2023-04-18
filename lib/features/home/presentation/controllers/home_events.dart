@@ -17,14 +17,3 @@ class GetSearchedRecipesEvent extends HomeEvents {
     required this.query,
   });
 }
-
-class GoToRecipeDetailsScreenEvent extends HomeEvents {
-  final int recipeId;
-  final bool fromFeed;
-  const GoToRecipeDetailsScreenEvent(this.recipeId, this.fromFeed);
-}
-
-class GoBackToHomeScreen extends HomeEvents {
-  final bool fromFeed;
-  const GoBackToHomeScreen(this.fromFeed);
-}

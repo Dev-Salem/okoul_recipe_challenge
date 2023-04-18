@@ -4,6 +4,9 @@ import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/recipe_card_widget.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_events.dart';
+import 'package:okoul_recipe_challenge/features/recipe_details/presentation/screens/recipe_details_screen.dart';
 
 class CardGridView extends StatefulWidget {
   final List<RecipeCard> recipes;
@@ -39,7 +42,7 @@ class _CardGridViewState extends State<CardGridView> {
   void onScroll() async {
     final bloc = BlocProvider.of<HomeFeatureBloc>(context);
     if (_scrollController.position.pixels >=
-        _scrollController.position.maxScrollExtent * 0.9) {
+        _scrollController.position.maxScrollExtent * 0.95) {
       if (widget.isFeed) {
         bloc.add(const GetFeedRecipesEvent());
       } else {
@@ -69,9 +72,10 @@ class _CardGridViewState extends State<CardGridView> {
       itemBuilder: (context, index) {
         return InkWell(
           onTap: () {
-            BlocProvider.of<HomeFeatureBloc>(context).add(
-                GoToRecipeDetailsScreenEvent(
-                    widget.recipes[index].id, widget.isFeed));
+            BlocProvider.of<RecipeDetailsBloc>(context)
+                .add(GetRecipeDetailsEvent(widget.recipes[index].id));
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const RecipeDetailsScreen()));
           },
           child: RecipeCardWidget(
               name: widget.recipes[index].name,
