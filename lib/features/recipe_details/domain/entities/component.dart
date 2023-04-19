@@ -10,9 +10,6 @@ class Component extends Equatable {
     required this.ingredientDescription,
     required this.step,
   });
-/*
-  
-*/
 
   @override
   List<Object> get props => [ingredientDescription, step];

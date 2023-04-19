@@ -9,13 +9,6 @@ class Instruction extends Equatable {
     required this.instructionDescription,
     required this.step,
   });
-/*
-  
-
-  @override
-  String toString() =>
-      'Instruction(instructionDescription: $instructionDescription, step: $step)';
-*/
 
   @override
   List<Object> get props => [instructionDescription, step];

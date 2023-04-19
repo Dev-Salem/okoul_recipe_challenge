@@ -43,16 +43,23 @@ class RecipeCardWidget extends StatelessWidget {
             child: Image.network(
               imageURL,
               fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) =>
+                  Text("Error $error"),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
             child: Row(
               children: [
-                const Icon(
-                  Icons.star,
-                  size: 20,
-                  color: Colors.yellow,
+                InkWell(
+                  onTap: () {
+                    print('Hello World');
+                  },
+                  child: const Icon(
+                    Icons.star,
+                    size: 20,
+                    color: Colors.yellow,
+                  ),
                 ),
                 Text(
                   (rating * 5).toStringAsFixed(2),

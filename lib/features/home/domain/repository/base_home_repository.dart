@@ -4,5 +4,5 @@ abstract class BaseHomeRepository {
   EitherRecipeList getRecipeListByQuery(
       String query, int from, int to); //search specific recipes
   EitherRecipeList getRecipeList(
-      int from, int to); //return a feed for the home page
+      int from, int to); //return a feed for the Feed tab
 }

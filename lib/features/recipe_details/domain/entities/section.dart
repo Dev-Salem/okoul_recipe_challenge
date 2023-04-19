@@ -8,9 +8,6 @@ class Sections extends Equatable {
   const Sections({
     required this.components,
   });
-/*
- 
-*/
 
   @override
   List<Object> get props => [components];
