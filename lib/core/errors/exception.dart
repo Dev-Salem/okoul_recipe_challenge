@@ -7,5 +7,10 @@ class NetworkException implements Exception {
   const NetworkException({
     required this.errorMessageModel,
   });
-  
+}
+
+class StorageException implements Exception {
+  final String errorMessage;
+
+  const StorageException({required this.errorMessage});
 }

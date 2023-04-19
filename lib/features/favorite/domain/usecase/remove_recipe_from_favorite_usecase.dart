@@ -5,7 +5,7 @@ class RemoveRecipeFromFavoriteUseCase {
   final BaseLocalStorageRepository _baseLocalStorageRepository;
   const RemoveRecipeFromFavoriteUseCase(this._baseLocalStorageRepository);
 
-  call(DetailedRecipe recipe) async {
-    return await _baseLocalStorageRepository.removeRecipeFromFavorite(recipe);
+  call(int index) async {
+    return await _baseLocalStorageRepository.removeRecipeFromFavorite(index);
   }
 }

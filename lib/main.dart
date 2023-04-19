@@ -6,8 +6,11 @@ import 'package:okoul_recipe_challenge/features/home/presentation/controllers/ho
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/home_page.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
+import 'package:hive/hive.dart';
 
-void main() {
+Future<void> main() async {
+  //await Hive.initFlutter();
+  await Hive.openBox('recipes');
   runApp(const MyApp());
   ServiceLocator().init();
 }
@@ -33,34 +36,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-/*
-class Fake extends StatelessWidget {
-  const Fake({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: FutureBuilder(
-          future: httpCall(),
-          builder: (context, snapshot) {
-            return Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Center(child: Text('$snapshot')),
-            );
-          }),
-    );
-  }
-}
-
-httpCall() async {
-  final dio = Dio();
-  dio.options.headers['${ApiConstance.headerOption}host'] =
-      ApiConstance.apiHeader;
-  dio.options.headers['${ApiConstance.headerOption}key'] = ApiConstance.apiKey;
-  final response = await dio.get('${ApiConstance.baseURL}get-more-info',
-      queryParameters: {'id': 8138});
-  final result = DetailedRecipe.fromJson(response.data);
-  return result;
-  print(result);
-}
-*/
