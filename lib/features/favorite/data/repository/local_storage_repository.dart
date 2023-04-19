@@ -1,7 +1,7 @@
 import 'package:okoul_recipe_challenge/core/errors/exception.dart';
 import 'package:okoul_recipe_challenge/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:okoul_recipe_challenge/features/favorite/data/data_source/local_data_souce.dart';
+import 'package:okoul_recipe_challenge/features/favorite/data/data_source/local_data_source.dart';
 import 'package:okoul_recipe_challenge/features/favorite/domain/repository/base_local_storage_repository.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
 
