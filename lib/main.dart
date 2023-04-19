@@ -10,7 +10,7 @@ import 'package:hive/hive.dart';
 
 Future<void> main() async {
   //await Hive.initFlutter();
-  await Hive.openBox('recipes');
+  //await Hive.openBox('recipes');
   runApp(const MyApp());
   ServiceLocator().init();
 }
