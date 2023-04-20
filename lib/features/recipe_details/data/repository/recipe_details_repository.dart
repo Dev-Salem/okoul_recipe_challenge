@@ -15,8 +15,7 @@ class RecipeDetailsRepository extends BaseRecipeDetailsRepository {
     try {
       return Right(result);
     } on NetworkException catch (failure) {
-      return Left(
-          NetworkFailure(message: failure.errorMessageModel.statusMessage));
+      return Left(NetworkFailure(message: failure.errorMessageModel.message));
     }
   }
 }

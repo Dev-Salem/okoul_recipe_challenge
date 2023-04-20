@@ -4,7 +4,7 @@ import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/core/widgets/progress_indicator.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_states.dart';
-import 'package:okoul_recipe_challenge/features/home/presentation/widgets/card_grid_view.dart';
+import 'package:okoul_recipe_challenge/core/widgets/card_grid_view.dart';
 
 class SearchTab extends StatelessWidget {
   final TextEditingController controller;
@@ -29,7 +29,7 @@ class SearchTab extends StatelessWidget {
                   )
                 : CardGridView(
                     recipes: state.searchRecipesList,
-                    isFeed: false,
+                    tabName: TabName.search,
                     textEditingController: controller,
                   );
         }

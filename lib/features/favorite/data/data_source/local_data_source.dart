@@ -14,8 +14,6 @@ abstract class BaseLocalDataSource {
 class HiveLocalDataSource extends BaseLocalDataSource {
   final box = Hive.box(boxName);
 
-  HiveLocalDataSource();
-
   @override
   Future<Unit> addRecipeToFavorite(DetailedRecipe recipe) async {
     await box.add(recipe).onError((error, stackTrace) {
@@ -26,7 +24,8 @@ class HiveLocalDataSource extends BaseLocalDataSource {
 
   @override
   List<DetailedRecipe> getStoredRecipes() {
-    return box.values as List<DetailedRecipe>;
+    final result = box.values;
+    return List<DetailedRecipe>.from(result);
   }
 
   @override

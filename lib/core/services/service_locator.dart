@@ -20,13 +20,14 @@ import 'package:okoul_recipe_challenge/features/recipe_details/presentation/cont
 
 final sl = GetIt.instance;
 
+//HiveLocalDataSource
 class ServiceLocator {
   void init() {
     //bloc
     sl.registerFactory(() => HomeFeatureBloc(
         recipeListUseCase: sl(), recipeListByQueryUseCase: sl()));
     sl.registerFactory(() => RecipeDetailsBloc(sl()));
-    sl.registerLazySingleton(() => FavoriteBloc(sl(), sl(), sl()));
+    sl.registerFactory(() => FavoriteBloc(sl(), sl(), sl()));
 
     //use case
     sl.registerLazySingleton<GetRecipeListUseCase>(
@@ -54,6 +55,6 @@ class ServiceLocator {
     sl.registerLazySingleton<BaseRemoteDataSource>(() => DioRemoteDataSource());
     sl.registerLazySingleton<RecipeDetailsBaseRemoteDataSource>(
         () => DioRecipeDetailsDataSource());
-    sl.registerLazySingleton<BaseLocalDataSource>(() => HiveLocalDataSource());
+    sl.registerLazySingleton(() => HiveLocalDataSource());
   }
 }

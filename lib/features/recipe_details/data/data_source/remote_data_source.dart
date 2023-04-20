@@ -20,7 +20,7 @@ class DioRecipeDetailsDataSource extends RecipeDetailsBaseRemoteDataSource {
       return DetailedRecipeModel.fromJson(response.data);
     } else {
       throw NetworkException(
-          errorMessageModel: ErrorMessageModel.fromJson(response.data));
+          errorMessageModel: ErrorMessageModel.fromMap(response.data));
     }
   }
 }

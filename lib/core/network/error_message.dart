@@ -1,29 +1,29 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
 class ErrorMessageModel extends Equatable {
-  final int statusCode;
-  final String statusMessage;
-  final bool success;
+  final String message;
+  const ErrorMessageModel(this.message);
 
-  const ErrorMessageModel({
-    required this.statusCode,
-    required this.statusMessage,
-    required this.success,
-  });
+  @override
+  List<Object> get props => [message];
 
-  factory ErrorMessageModel.fromJson(Map<String, dynamic> json) {
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'message': message,
+    };
+  }
+
+  factory ErrorMessageModel.fromMap(Map<String, dynamic> map) {
     return ErrorMessageModel(
-      statusCode: json["status_code"],
-      statusMessage: json["status_message"],
-      success: json["success"],
+      map['message'] as String,
     );
   }
 
-  @override
-  List<Object?> get props => [
-        statusCode,
-        statusMessage,
-        success,
-      ];
+  String toJson() => json.encode(toMap());
+
+  factory ErrorMessageModel.fromJson(String source) =>
+      ErrorMessageModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }

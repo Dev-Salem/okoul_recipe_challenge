@@ -24,7 +24,7 @@ class DioRemoteDataSource extends BaseRemoteDataSource {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {
       throw NetworkException(
-          errorMessageModel: ErrorMessageModel.fromJson(response.data));
+          errorMessageModel: ErrorMessageModel.fromMap(response.data));
     }
   }
 
@@ -39,7 +39,7 @@ class DioRemoteDataSource extends BaseRemoteDataSource {
       return RecipeCardsListModel.fromJson(response.data['results']);
     } else {
       throw NetworkException(
-          errorMessageModel: ErrorMessageModel.fromJson(response.data));
+          errorMessageModel: ErrorMessageModel.fromMap(response.data));
     }
   }
 }

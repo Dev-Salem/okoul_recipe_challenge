@@ -15,8 +15,7 @@ class HomeRepositoryImpl extends BaseHomeRepository {
     try {
       return Right(result.recipes);
     } on NetworkException catch (failure) {
-      return Left(
-          NetworkFailure(message: failure.errorMessageModel.statusMessage));
+      return Left(NetworkFailure(message: failure.errorMessageModel.message));
     }
   }
 
@@ -27,8 +26,7 @@ class HomeRepositoryImpl extends BaseHomeRepository {
     try {
       return Right(result.recipes);
     } on NetworkException catch (failure) {
-      return Left(
-          NetworkFailure(message: failure.errorMessageModel.statusMessage));
+      return Left(NetworkFailure(message: failure.errorMessageModel.message));
     }
   }
 }

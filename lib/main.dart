@@ -10,6 +10,7 @@ import 'package:okoul_recipe_challenge/features/favorite/data/models/instruction
 import 'package:okoul_recipe_challenge/features/favorite/data/models/rating.dart';
 import 'package:okoul_recipe_challenge/features/favorite/data/models/section.dart';
 import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_bloc.dart';
+import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_events.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/home_page.dart';
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (_) => RecipeDetailsBloc(sl())), // Recipe Details Bloc
         BlocProvider(
-            create: (_) => FavoriteBloc(sl(), sl(), sl())), // Favorite tab Bloc
+            create: (_) => FavoriteBloc(sl(), sl(), sl())
+              ..add(const GetStoredRecipesEvent())), // Favorite tab Bloc
       ],
       child: MaterialApp(
         home: const HomePage(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:okoul_recipe_challenge/features/favorite/presentation/screens/favorite_tab.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/feed_tab.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/screens/search_tab.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/widgets/search_bar_widget.dart';
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage>
               SearchTab(
                 controller: textEditingController,
               ),
-              const Text("hi 2")
+              const FavoriteTab()
             ]))
           ],
         ),

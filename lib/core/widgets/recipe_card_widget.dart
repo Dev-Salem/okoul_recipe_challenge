@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_bloc.dart';
+import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_events.dart';
+import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 
 class RecipeCardWidget extends StatelessWidget {
-  final String name;
-  final String imageURL;
-  final num rating;
-
-  const RecipeCardWidget(
-      {required this.name,
-      required this.imageURL,
-      required this.rating,
-      super.key});
+  final RecipeCard recipeCard;
+  const RecipeCardWidget({required this.recipeCard, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +38,7 @@ class RecipeCardWidget extends StatelessWidget {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15))),
             child: Image.network(
-              imageURL,
+              recipeCard.imageURL,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) =>
                   Text("Error $error"),
@@ -57,14 +54,15 @@ class RecipeCardWidget extends StatelessWidget {
                   color: Colors.yellow,
                 ),
                 Text(
-                  (rating * 5).toStringAsFixed(2),
+                  (recipeCard.rating.score * 5).toStringAsFixed(2),
                   style: const TextStyle(fontSize: 20),
                 ),
                 const Expanded(child: SizedBox()),
                 //TODO:
                 InkWell(
                   onTap: () {
-                    print("add to favorite");
+                    // BlocProvider.of<FavoriteBloc>(context)
+                    //     .add(AddRecipeToFavoriteEvent(recipe: recipeCard));
                   },
                   child: const Icon(
                     Icons.favorite,
@@ -82,7 +80,7 @@ class RecipeCardWidget extends StatelessWidget {
               child: Padding(
             padding: const EdgeInsets.only(right: 3, left: 3),
             child: Text(
-              name,
+              recipeCard.name,
               style: const TextStyle(fontSize: 17, shadows: [
                 BoxShadow(color: Colors.black, spreadRadius: 2, blurRadius: 10)
               ]),

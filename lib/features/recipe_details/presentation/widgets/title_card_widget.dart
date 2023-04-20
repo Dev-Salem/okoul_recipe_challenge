@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 class TitleCardWidget extends StatelessWidget {
   final String recipeName;
   final num recipeRate;
+  final Function onTap;
   const TitleCardWidget(
-      {super.key, required this.recipeName, required this.recipeRate});
+      {super.key,
+      required this.onTap,
+      required this.recipeName,
+      required this.recipeRate});
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +42,7 @@ class TitleCardWidget extends StatelessWidget {
                 Text((recipeRate * 5).toStringAsFixed(2)),
                 const Expanded(child: SizedBox()),
                 InkWell(
-                    onTap: () {
-                      //TODO: Implment This button
-                      print("add to favorite from details");
-                    },
+                    onTap: onTap(),
                     child: const Icon(
                       Icons.favorite,
                       color: Colors.red,

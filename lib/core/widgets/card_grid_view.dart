@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
-import 'package:okoul_recipe_challenge/features/home/presentation/widgets/recipe_card_widget.dart';
+import 'package:okoul_recipe_challenge/core/widgets/recipe_card_widget.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_events.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/screens/recipe_details_screen.dart';
 
 class CardGridView extends StatefulWidget {
   final List<RecipeCard> recipes;
-  final bool isFeed;
+  final TabName tabName;
   final TextEditingController? textEditingController;
   const CardGridView(
       {super.key,
+      required this.tabName,
       required this.recipes,
-      required this.isFeed,
       this.textEditingController});
 
   @override
@@ -44,9 +45,9 @@ class _CardGridViewState extends State<CardGridView> {
     if (_scrollController.position.pixels >=
         _scrollController.position.maxScrollExtent * 0.95) {
       //when the user reaches 95% of the page, retrieve more recipes
-      if (widget.isFeed) {
+      if (widget.tabName == TabName.feed) {
         bloc.add(const GetFeedRecipesEvent());
-      } else {
+      } else if (widget.tabName == TabName.search) {
         bloc.add(
             GetSearchedRecipesEvent(query: widget.textEditingController!.text));
       }
@@ -56,10 +57,12 @@ class _CardGridViewState extends State<CardGridView> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      key: widget.isFeed
+      key: widget.tabName == TabName.feed
           ? const PageStorageKey(0)
-          : const PageStorageKey(
-              1), //Save the location of the scrolling position
+          : widget.tabName == TabName.search
+              ? const PageStorageKey(1)
+              : const PageStorageKey(
+                  2), //Save the location of the scrolling position
       controller: _scrollController,
       itemCount: widget.recipes.length,
       itemBuilder: (context, index) {
@@ -71,9 +74,8 @@ class _CardGridViewState extends State<CardGridView> {
                 MaterialPageRoute(builder: (_) => const RecipeDetailsScreen()));
           },
           child: RecipeCardWidget(
-              name: widget.recipes[index].name,
-              imageURL: widget.recipes[index].imageURL,
-              rating: widget.recipes[index].rating.score),
+            recipeCard: widget.recipes[index],
+          ),
         );
       },
       addRepaintBoundaries: false,
