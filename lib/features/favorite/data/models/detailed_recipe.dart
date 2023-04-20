@@ -5,7 +5,7 @@ import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/d
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/instruction.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/section.dart';
 
-//part 'detailed_recipe.g.dart';
+part 'detailed_recipe.g.dart';
 
 @HiveType(typeId: 0)
 class HiveDetailedRecipe extends HiveObject implements DetailedRecipe {

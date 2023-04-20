@@ -2,7 +2,7 @@
 import 'package:hive/hive.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/component.dart';
 
-//part 'component.g.dart';
+part 'component.g.dart';
 
 @HiveType(typeId: 3)
 class HiveComponent extends HiveObject implements Component {

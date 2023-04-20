@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/component.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/section.dart';
 
-//part 'section.g.dart';
+part 'section.g.dart';
 
 @HiveType(typeId: 2)
 class HiveSections extends HiveObject implements Sections {

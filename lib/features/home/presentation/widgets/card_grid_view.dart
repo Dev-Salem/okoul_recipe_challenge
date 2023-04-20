@@ -63,7 +63,7 @@ class _CardGridViewState extends State<CardGridView> {
       controller: _scrollController,
       itemCount: widget.recipes.length,
       itemBuilder: (context, index) {
-        return InkWell(
+        return GestureDetector(
           onTap: () {
             BlocProvider.of<RecipeDetailsBloc>(context)
                 .add(GetRecipeDetailsEvent(widget.recipes[index].id));

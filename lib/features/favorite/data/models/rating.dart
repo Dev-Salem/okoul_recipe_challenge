@@ -2,6 +2,8 @@
 import 'package:hive/hive.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/rating.dart';
 
+part 'rating.g.dart';
+
 @HiveType(typeId: 4)
 class HiveRating extends HiveObject implements Rating {
   @HiveField(0)

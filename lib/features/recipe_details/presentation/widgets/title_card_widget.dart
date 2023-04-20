@@ -37,10 +37,15 @@ class TitleCardWidget extends StatelessWidget {
                 ),
                 Text((recipeRate * 5).toStringAsFixed(2)),
                 const Expanded(child: SizedBox()),
-                IconButton(
-                  icon: const Icon(Icons.favorite),
-                  onPressed: () {},
-                )
+                InkWell(
+                    onTap: () {
+                      //TODO: Implment This button
+                      print("add to favorite from details");
+                    },
+                    child: const Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    ))
               ],
             )
           ],

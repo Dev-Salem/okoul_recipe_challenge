@@ -51,24 +51,26 @@ class RecipeCardWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
             child: Row(
               children: [
-                InkWell(
-                  onTap: () {
-                    print('Hello World');
-                  },
-                  child: const Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.yellow,
-                  ),
+                const Icon(
+                  Icons.star,
+                  size: 20,
+                  color: Colors.yellow,
                 ),
                 Text(
                   (rating * 5).toStringAsFixed(2),
                   style: const TextStyle(fontSize: 20),
                 ),
                 const Expanded(child: SizedBox()),
-                const Icon(
-                  Icons.favorite,
-                  size: 25,
+                //TODO:
+                InkWell(
+                  onTap: () {
+                    print("add to favorite");
+                  },
+                  child: const Icon(
+                    Icons.favorite,
+                    size: 25,
+                    color: Colors.red,
+                  ),
                 ),
                 const SizedBox(
                   width: 3,

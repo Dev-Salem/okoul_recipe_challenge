@@ -2,7 +2,7 @@
 import 'package:hive/hive.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/instruction.dart';
 
-//part 'instruction.g.dart';
+part 'instruction.g.dart';
 
 @HiveType(typeId: 1)
 class HiveInstruction extends HiveObject implements Instruction {
