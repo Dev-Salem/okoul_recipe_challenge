@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TitleCardWidget extends StatelessWidget {
   final String recipeName;
   final num recipeRate;
-  final Function onTap;
+  final VoidCallback onTap;
   const TitleCardWidget(
       {super.key,
       required this.onTap,
@@ -42,7 +42,7 @@ class TitleCardWidget extends StatelessWidget {
                 Text((recipeRate * 5).toStringAsFixed(2)),
                 const Expanded(child: SizedBox()),
                 InkWell(
-                    onTap: onTap(),
+                    onTap: onTap,
                     child: const Icon(
                       Icons.favorite,
                       color: Colors.red,

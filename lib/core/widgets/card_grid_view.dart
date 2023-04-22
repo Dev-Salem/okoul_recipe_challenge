@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
+import 'package:okoul_recipe_challenge/features/favorite/presentation/screens/favorite_details.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
@@ -10,7 +11,7 @@ import 'package:okoul_recipe_challenge/features/recipe_details/presentation/cont
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/screens/recipe_details_screen.dart';
 
 class CardGridView extends StatefulWidget {
-  final List<RecipeCard> recipes;
+  final dynamic recipes;
   final TabName tabName;
   final TextEditingController? textEditingController;
   const CardGridView(
@@ -67,12 +68,18 @@ class _CardGridViewState extends State<CardGridView> {
       itemCount: widget.recipes.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {
-            BlocProvider.of<RecipeDetailsBloc>(context)
-                .add(GetRecipeDetailsEvent(widget.recipes[index].id));
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const RecipeDetailsScreen()));
-          },
+          onTap: widget.tabName == TabName.favorite
+              ? () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) =>
+                          FavoriteDetails(recipe: widget.recipes[index])));
+                }
+              : () {
+                  BlocProvider.of<RecipeDetailsBloc>(context)
+                      .add(GetRecipeDetailsEvent(widget.recipes[index].id));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const RecipeDetailsScreen()));
+                },
           child: RecipeCardWidget(
             recipeCard: widget.recipes[index],
           ),

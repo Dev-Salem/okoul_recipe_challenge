@@ -1,1 +1,2 @@
-const String privateApiKey = '488ca2004bmshd3f99dddbc793a0p15318ajsn0fcab92d8687';
+const String privateApiKey =
+    '404babfaeemsh1c67eea37ffd433p1b78e2jsn95363cfae1dc';

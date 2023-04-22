@@ -21,9 +21,9 @@ class LocalStorageRepository extends BaseLocalStorageRepository {
   }
 
   @override
-  Either<Failure, List<DetailedRecipe>> getStoredRecipes() {
+  Future<Either<Failure, List<DetailedRecipe>>> getStoredRecipes() async {
     try {
-      final result = _localDataSource.getStoredRecipes();
+      final result = await _localDataSource.getStoredRecipes();
       return Right(result);
     } catch (e) {
       return Left(LocalStorageFailure(message: e.toString()));

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/core/widgets/progress_indicator.dart';
 import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_bloc.dart';
@@ -46,6 +47,10 @@ class RecipeDetailsScreen extends StatelessWidget {
                             BlocProvider.of<FavoriteBloc>(context).add(
                                 AddRecipeToFavoriteEvent(
                                     recipe: state.detailedRecipe));
+
+                            // ScaffoldMessenger.of(context).showSnackBar(
+                            //     const SnackBar(
+                            //         content: Text("Added To Favorite")));
                           },
                           recipeName: state.detailedRecipe.name,
                           recipeRate: state.detailedRecipe.rating.score),

@@ -20,28 +20,34 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
   final RemoveRecipeFromFavoriteUseCase _removeRecipeFromFavoriteUseCase;
 
   _getStoredRecipesEvent(
-      GetStoredRecipesEvent event, Emitter<FavoriteState> emitter) {
-    final result = _getStoredRecipesUseCase();
+      GetStoredRecipesEvent event, Emitter<FavoriteState> emitter) async {
+    emitter(state.copyWith(requestState: RequestState.loading, recipes: []));
+    final result = await _getStoredRecipesUseCase();
     result.fold(
         (l) => emitter(state.copyWith(
             requestState: RequestState.error, errorMessage: l.message)),
-        (r) => emitter(
-            state.copyWith(requestState: RequestState.loaded, recipes: r)));
+        (r) => emitter(state.copyWith(
+            feedbackMessage: 'Favorite List has been updated',
+            requestState: RequestState.loaded,
+            recipes: r)));
   }
 
   _addRecipeToFavoriteEvent(
       AddRecipeToFavoriteEvent event, Emitter<FavoriteState> emitter) async {
+    emitter(state.copyWith(requestState: RequestState.loading));
     final result = await _addRecipeToFavoriteUseCase(event.recipe);
     result.fold(
         (l) => emitter(state.copyWith(
             requestState: RequestState.error, errorMessage: l.message)),
         (r) => emitter(state.copyWith(
             requestState: RequestState.loaded,
-            feedbackMessage: "Recipe is Added To Favorite")));
+            feedbackMessage: "Recipe has been Added To Favorite")));
+    add(const GetStoredRecipesEvent());
   }
 
   _removeRecipeFromFavorite(RemoveRecipeFromFavoriteEvent event,
       Emitter<FavoriteState> emitter) async {
+    emitter(state.copyWith(requestState: RequestState.loading));
     final result = await _removeRecipeFromFavoriteUseCase(event.index);
     result.fold(
         (l) => emitter(state.copyWith(

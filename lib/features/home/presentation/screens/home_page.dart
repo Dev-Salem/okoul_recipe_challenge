@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     textEditingController = TextEditingController();
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length: 3, vsync: this, initialIndex: 2);
     super.initState();
   }
 
