@@ -12,39 +12,32 @@ class FavoriteTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocConsumer<FavoriteBloc, FavoriteState>(
-        listener: (context, state) {
-          if (state.feedbackMessage != '') {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(state.feedbackMessage),
-              backgroundColor: Colors.black26,
-              behavior: SnackBarBehavior.floating,
-            ));
-          }
-        },
-        //buildWhen: (previous, current) => previous != current,
-        builder: (context, state) {
-          switch (state.requestState) {
-            case RequestState.loading:
-              return const CustomProgressIndicator();
-            case RequestState.error:
-              return Center(
-                child: Text(state.errorMessage),
+    return BlocBuilder<FavoriteBloc, FavoriteState>(
+      buildWhen: (previous, current) => previous != current,
+      builder: (context, state) {
+        switch (state.requestState) {
+          case RequestState.loading:
+            return const CustomProgressIndicator();
+          case RequestState.error:
+            return Center(
+              child: Text(state.errorMessage),
+            );
+          case RequestState.loaded:
+            if (state.feedbackMessage.isNotEmpty) {
+              Fluttertoast.showToast(
+                  msg: state.feedbackMessage, toastLength: Toast.LENGTH_LONG);
+            }
+            if (state.recipes.isEmpty) {
+              return const Center(
+                child: Text("Nothing's Here"),
               );
-            case RequestState.loaded:
-              if (state.recipes.isEmpty) {
-                return const Center(
-                  child: Text("Nothing's Here"),
-                );
-              }
-              return CardGridView(
-                recipes: state.recipes,
-                tabName: TabName.favorite,
-              );
-          }
-        },
-      ),
+            }
+            return CardGridView(
+              recipes: state.recipes,
+              tabName: TabName.favorite,
+            );
+        }
+      },
     );
   }
 }

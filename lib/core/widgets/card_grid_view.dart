@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/features/favorite/presentation/screens/favorite_details.dart';
-import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_bloc.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_events.dart';
 import 'package:okoul_recipe_challenge/core/widgets/recipe_card_widget.dart';

@@ -1,1 +1,0 @@
-const boxName = 'recipes';

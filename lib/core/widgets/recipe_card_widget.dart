@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_bloc.dart';
-import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_events.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 
 class RecipeCardWidget extends StatelessWidget {
@@ -58,7 +55,7 @@ class RecipeCardWidget extends StatelessWidget {
                   style: const TextStyle(fontSize: 20),
                 ),
                 const Expanded(child: SizedBox()),
-                //TODO:
+                //TODO: FIX THIS 2
                 InkWell(
                   onTap: () {
                     // BlocProvider.of<FavoriteBloc>(context)

@@ -26,4 +26,7 @@ class RemoveRecipeFromFavoriteEvent extends FavoriteEvents {
 
 class GetStoredRecipesEvent extends FavoriteEvents {
   const GetStoredRecipesEvent();
+
+  @override
+  List<Object?> get props => [];
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_controllers.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/custom_app_bar.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/image_shadow_widget.dart';
@@ -24,11 +26,10 @@ class FavoriteDetails extends StatelessWidget {
               const CustomAppBar(),
               TitleCardWidget(
                   onTap: () {
-                    // Fluttertoast.showToast(msg: "Added to Favorite");
-                    // BlocProvider.of<FavoriteBloc>(context).add(
-                    //     AddRecipeToFavoriteEvent(
-                    //         recipe: state.detailedRecipe));
+                    BlocProvider.of<FavoriteBloc>(context)
+                        .add(RemoveRecipeFromFavoriteEvent(index: recipe.id));
                   },
+                  detailedRecipe: recipe,
                   recipeName: recipe.name,
                   recipeRate: recipe.rating.score),
               Container(
