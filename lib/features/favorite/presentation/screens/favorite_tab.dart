@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/core/widgets/card_grid_view.dart';
 import 'package:okoul_recipe_challenge/core/widgets/progress_indicator.dart';
@@ -23,10 +22,6 @@ class FavoriteTab extends StatelessWidget {
               child: Text(state.errorMessage),
             );
           case RequestState.loaded:
-            if (state.feedbackMessage.isNotEmpty) {
-              Fluttertoast.showToast(
-                  msg: state.feedbackMessage, toastLength: Toast.LENGTH_LONG);
-            }
             if (state.recipes.isEmpty) {
               return const Center(
                 child: Text("Nothing's Here"),

@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/core/widgets/progress_indicator.dart';
+import 'package:okoul_recipe_challenge/core/widgets/recipe_details_component/exports.dart';
 import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_bloc.dart';
 import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_events.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_states.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/custom_app_bar.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/image_shadow_widget.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/image_widget.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/ingredients_card_widget.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/instructions_card_widget.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/presentation/widgets/title_card_widget.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {
   const RecipeDetailsScreen({
@@ -43,11 +39,12 @@ class RecipeDetailsScreen extends StatelessWidget {
                       const CustomAppBar(),
                       TitleCardWidget(
                           onTap: () {
+                            Fluttertoast.showToast(
+                                msg: "Recipe has been added to favorite");
                             BlocProvider.of<FavoriteBloc>(context).add(
                                 AddRecipeToFavoriteEvent(
                                     recipe: state.detailedRecipe));
                           },
-                          detailedRecipe: state.detailedRecipe,
                           recipeName: state.detailedRecipe.name,
                           recipeRate: state.detailedRecipe.rating.score),
                       Container(

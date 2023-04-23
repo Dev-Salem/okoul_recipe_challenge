@@ -54,22 +54,22 @@ class RecipeCardWidget extends StatelessWidget {
                   (recipeCard.rating.score * 5).toStringAsFixed(2),
                   style: const TextStyle(fontSize: 20),
                 ),
-                const Expanded(child: SizedBox()),
-                //TODO: FIX THIS 2
-                InkWell(
-                  onTap: () {
-                    // BlocProvider.of<FavoriteBloc>(context)
-                    //     .add(AddRecipeToFavoriteEvent(recipe: recipeCard));
-                  },
-                  child: const Icon(
-                    Icons.favorite,
-                    size: 25,
-                    color: Colors.red,
-                  ),
-                ),
-                const SizedBox(
-                  width: 3,
-                )
+                // const Expanded(child: SizedBox()),
+                // //Add Favorite Button to the card if time there's enough time
+                // InkWell(
+                //   onTap: () {
+                //     // BlocProvider.of<FavoriteBloc>(context)
+                //     //     .add(AddRecipeToFavoriteEvent(recipe: recipeCard));
+                //   },
+                //   child: const Icon(
+                //     Icons.favorite,
+                //     size: 25,
+                //     color: Colors.red,
+                //   ),
+                // ),
+                // const SizedBox(
+                //   width: 3,
+                // )
               ],
             ),
           ),

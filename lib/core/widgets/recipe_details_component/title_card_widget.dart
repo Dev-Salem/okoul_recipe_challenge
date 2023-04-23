@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
 
 class TitleCardWidget extends StatelessWidget {
   final String recipeName;
   final num recipeRate;
-  final DetailedRecipe detailedRecipe;
   final Function() onTap;
   const TitleCardWidget(
       {super.key,
       required this.onTap,
-      required this.detailedRecipe,
       required this.recipeName,
       required this.recipeRate});
 
