@@ -7,17 +7,18 @@ class FavoriteState extends Equatable {
   final RequestState requestState;
   final String errorMessage;
   final List<DetailedRecipe> recipes;
-  final String feedbackMessage;
 
   const FavoriteState(
       {this.errorMessage = '',
-      this.feedbackMessage = '',
       this.requestState = RequestState.loading,
       this.recipes = const []});
 
   @override
-  List<Object> get props =>
-      [requestState, recipes, errorMessage, feedbackMessage];
+  List<Object> get props => [
+        requestState,
+        recipes,
+        errorMessage,
+      ];
 
   FavoriteState copyWith(
       {RequestState? requestState,
@@ -25,7 +26,6 @@ class FavoriteState extends Equatable {
       List<DetailedRecipe>? recipes,
       String? errorMessage}) {
     return FavoriteState(
-      feedbackMessage: feedbackMessage ?? this.feedbackMessage,
       errorMessage: errorMessage ?? this.errorMessage,
       requestState: requestState ?? this.requestState,
       recipes: recipes ?? this.recipes,

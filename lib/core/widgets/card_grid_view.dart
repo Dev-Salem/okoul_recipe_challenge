@@ -10,7 +10,8 @@ import 'package:okoul_recipe_challenge/features/recipe_details/presentation/cont
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/screens/recipe_details_screen.dart';
 
 class CardGridView extends StatefulWidget {
-  final dynamic recipes;
+  final dynamic
+      recipes; //Might pass `Detailed Recipe` object or `Recipe Card` object
   final TabName tabName;
   final TextEditingController? textEditingController;
   const CardGridView(

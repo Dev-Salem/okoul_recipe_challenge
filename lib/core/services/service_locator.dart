@@ -55,6 +55,6 @@ class ServiceLocator {
     sl.registerLazySingleton<BaseRemoteDataSource>(() => DioRemoteDataSource());
     sl.registerLazySingleton<RecipeDetailsBaseRemoteDataSource>(
         () => DioRecipeDetailsDataSource());
-    sl.registerLazySingleton(() => HiveLocalDataSource());
+    sl.registerLazySingleton(() => IsarLocalDataSource());
   }
 }

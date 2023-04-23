@@ -15,7 +15,7 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
     on<GetStoredRecipesEvent>(_getStoredRecipesEvent);
     on<AddRecipeToFavoriteEvent>(_addRecipeToFavoriteEvent);
     on<RemoveRecipeFromFavoriteEvent>(_removeRecipeFromFavorite);
-    instance.watchLazy().listen((event) {
+    recipesStream.listen((event) {
       add(const GetStoredRecipesEvent());
     });
   }
@@ -23,7 +23,7 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
   final GetStoredRecipesUseCase _getStoredRecipesUseCase;
   final AddRecipeToFavoriteUseCase _addRecipeToFavoriteUseCase;
   final RemoveRecipeFromFavoriteUseCase _removeRecipeFromFavoriteUseCase;
-  final instance = Isar.getInstance()!.isarDetailedRecipes;
+  final recipesStream = Isar.getInstance()!.isarDetailedRecipes.watchLazy();
 
   _getStoredRecipesEvent(
       GetStoredRecipesEvent event, Emitter<FavoriteState> emitter) async {
@@ -34,10 +34,8 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
     result.fold(
         (l) => emitter(state.copyWith(
             requestState: RequestState.error, errorMessage: l.message)),
-        (r) => emitter(state.copyWith(
-            //feedbackMessage: 'Favorite List has been updated',
-            requestState: RequestState.loaded,
-            recipes: r)));
+        (r) => emitter(
+            state.copyWith(requestState: RequestState.loaded, recipes: r)));
   }
 
   _addRecipeToFavoriteEvent(
@@ -48,8 +46,8 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
         (l) => emitter(state.copyWith(
             requestState: RequestState.error, errorMessage: l.message)), (r) {
       emitter(state.copyWith(
-          requestState: RequestState.loaded,
-          feedbackMessage: "Recipe has been Added To Favorite"));
+        requestState: RequestState.loaded,
+      ));
     });
   }
 
@@ -61,7 +59,13 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
         (l) => emitter(state.copyWith(
             requestState: RequestState.error, errorMessage: l.message)),
         (r) => emitter(state.copyWith(
-            requestState: RequestState.loaded,
-            feedbackMessage: "Recipe is Removed From Favorite")));
+              requestState: RequestState.loaded,
+            )));
+  }
+
+  @override
+  Future<void> close() {
+    // recipesStream.listen((event) {}).cancel();
+    return super.close();
   }
 }

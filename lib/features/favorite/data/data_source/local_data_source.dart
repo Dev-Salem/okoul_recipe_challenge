@@ -11,7 +11,7 @@ abstract class BaseLocalDataSource {
   Future<Unit> removeRecipeFromFavorite(int index);
 }
 
-class HiveLocalDataSource extends BaseLocalDataSource {
+class IsarLocalDataSource extends BaseLocalDataSource {
   final instance = Isar.getInstance()!;
   @override
   Future<Unit> addRecipeToFavorite(DetailedRecipe recipe) async {

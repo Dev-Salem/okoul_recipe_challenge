@@ -6,7 +6,7 @@ import 'package:okoul_recipe_challenge/features/favorite/domain/repository/base_
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
 
 class LocalStorageRepository extends BaseLocalStorageRepository {
-  final HiveLocalDataSource _localDataSource;
+  final IsarLocalDataSource _localDataSource;
   LocalStorageRepository(this._localDataSource);
 
   @override

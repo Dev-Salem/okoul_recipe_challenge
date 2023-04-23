@@ -5,7 +5,7 @@ import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/recipe_card.dart';
 
 class HomeState extends Equatable {
-  //States of get recipe cards by query
+  //States of get recipe cards by query/search
   final List<RecipeCard> searchRecipesList;
   final RequestState searchRequestState;
   final String searchErrorMessage;

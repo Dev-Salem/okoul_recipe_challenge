@@ -20,22 +20,13 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     textEditingController = TextEditingController();
-    tabController = TabController(length: 3, vsync: this, initialIndex: 2)
-      ..addListener(_getStoredRecipes);
+    tabController = TabController(length: 3, vsync: this, initialIndex: 2);
     super.initState();
-  }
-
-  _getStoredRecipes() {
-    if (tabController.index == 2) {
-      //BlocProvider.of<FavoriteBloc>(context).add(const GetStoredRecipesEvent());
-    }
   }
 
   @override
   void dispose() {
-    tabController
-      ..removeListener(_getStoredRecipes)
-      ..dispose();
+    tabController.dispose();
     textEditingController.dispose();
     super.dispose();
   }
