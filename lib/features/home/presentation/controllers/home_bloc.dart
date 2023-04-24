@@ -17,7 +17,7 @@ class HomeFeatureBloc extends Bloc<HomeEvents, HomeState> {
   }
 
   _getFeedRecipes(GetFeedRecipesEvent event, Emitter<HomeState> emitter) async {
-    // emitter(state.copyWith(feedRequestState: RequestState.loading));
+    emitter(state.copyWith(feedRequestState: RequestState.loading));
     if (state.feedMaxLimit) {
     } else {
       final response =
@@ -38,9 +38,9 @@ class HomeFeatureBloc extends Bloc<HomeEvents, HomeState> {
 
   _getSearchedRecipes(
       GetSearchedRecipesEvent event, Emitter<HomeState> emitter) async {
-    // emitter(state.copyWith(
-    //   searchRequestState: RequestState.loading,
-    // ));
+    emitter(state.copyWith(
+      searchRequestState: RequestState.loading,
+    ));
     if (state.searchMaxLimit) {
     } else {
       final response = await recipeListByQueryUseCase(

@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:isar/isar.dart';
-import 'package:okoul_recipe_challenge/core/errors/exception.dart';
 import 'package:okoul_recipe_challenge/features/favorite/data/models/isar/isar_models.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
 
@@ -23,7 +22,7 @@ class IsarLocalDataSource extends BaseLocalDataSource {
         await instance.isarDetailedRecipes.put(isarObject);
       }
     }).onError((error, stackTrace) {
-      throw StorageException(errorMessage: error.toString());
+      throw Exception(error.toString());
     });
     return unit;
   }
@@ -41,7 +40,7 @@ class IsarLocalDataSource extends BaseLocalDataSource {
     instance.writeTxn(() async {
       await instance.isarDetailedRecipes.delete(index);
     }).onError((error, stackTrace) {
-      throw StorageException(errorMessage: error.toString());
+      throw Exception(error.toString());
     });
     return unit;
   }

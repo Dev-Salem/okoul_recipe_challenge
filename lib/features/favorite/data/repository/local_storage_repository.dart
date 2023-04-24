@@ -1,4 +1,3 @@
-import 'package:okoul_recipe_challenge/core/errors/exception.dart';
 import 'package:okoul_recipe_challenge/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:okoul_recipe_challenge/features/favorite/data/data_source/local_data_source.dart';
@@ -15,8 +14,8 @@ class LocalStorageRepository extends BaseLocalStorageRepository {
     try {
       final result = await _localDataSource.addRecipeToFavorite(recipe);
       return Right(result);
-    } on StorageException catch (e) {
-      return Left(LocalStorageFailure(message: e.errorMessage));
+    } catch (e) {
+      return Left(LocalStorageFailure(message: e.toString()));
     }
   }
 

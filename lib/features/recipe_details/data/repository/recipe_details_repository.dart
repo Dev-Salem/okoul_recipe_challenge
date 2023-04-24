@@ -1,4 +1,3 @@
-import 'package:okoul_recipe_challenge/core/errors/exception.dart';
 import 'package:okoul_recipe_challenge/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/data/data_source/remote_data_source.dart';
@@ -14,8 +13,8 @@ class RecipeDetailsRepository extends BaseRecipeDetailsRepository {
     final result = await _baseRemoteDataSource.getRecipeDetails(id);
     try {
       return Right(result);
-    } on NetworkException catch (failure) {
-      return Left(NetworkFailure(message: failure.errorMessageModel.message));
+    } catch (e) {
+      return Left(NetworkFailure(message: e.toString()));
     }
   }
 }

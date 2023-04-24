@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:okoul_recipe_challenge/core/errors/exception.dart';
 import 'package:okoul_recipe_challenge/core/errors/failure.dart';
 import 'package:okoul_recipe_challenge/core/utils/type_defs.dart';
 import 'package:okoul_recipe_challenge/features/home/data/data_source/home_remote_data_source.dart';

@@ -10,8 +10,8 @@ class ApiClient {
         ApiConstance.apiHeader;
     _dio.options.headers['${ApiConstance.headerOption}key'] =
         ApiConstance.apiKey;
-    _dio.options.connectTimeout = const Duration(seconds: 5);
-    _dio.options.receiveTimeout = const Duration(seconds: 5);
+    _dio.options.connectTimeout = const Duration(seconds: 15);
+    _dio.options.receiveTimeout = const Duration(seconds: 15);
     try {
       final response = await _dio.get('${ApiConstance.baseURL}$path',
           queryParameters: queryParameters);
