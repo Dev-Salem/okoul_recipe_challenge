@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+-----------------------------------------------------
+A participation to Okoul recipe challenge.
+* Clean architecture
+* Isar database to cache recipes
+* Dio to handle http calls
+* get it for dependency injection
