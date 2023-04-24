@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:okoul_recipe_challenge/core/widgets/cached_image_widget.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 
 class RecipeCardWidget extends StatelessWidget {
   final RecipeCard recipeCard;
-  const RecipeCardWidget({required this.recipeCard, super.key});
+  final bool cacheImage;
+  const RecipeCardWidget(
+      {required this.recipeCard, this.cacheImage = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +37,14 @@ class RecipeCardWidget extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15))),
-            child: Image.network(
-              recipeCard.imageURL,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) =>
-                  Text("Error $error"),
-            ),
+            child: cacheImage
+                ? CachedImageWidget(imageURL: recipeCard.imageURL)
+                : Image.network(
+                    recipeCard.imageURL,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                        Text("Error $error"),
+                  ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),

@@ -81,6 +81,7 @@ class _CardGridViewState extends State<CardGridView> {
                       builder: (_) => const RecipeDetailsScreen()));
                 },
           child: RecipeCardWidget(
+            cacheImage: widget.tabName == TabName.favorite,
             recipeCard: widget.recipes[index],
           ),
         );
