@@ -14,8 +14,8 @@ class HomeRepositoryImpl extends BaseHomeRepository {
     final result = await baseRemoteDataSource.getRecipeList(from, to);
     try {
       return Right(result.recipes);
-    } on NetworkException catch (failure) {
-      return Left(NetworkFailure(message: failure.errorMessageModel.message));
+    } catch (e) {
+      return Left(NetworkFailure(message: e.toString()));
     }
   }
 
@@ -25,8 +25,8 @@ class HomeRepositoryImpl extends BaseHomeRepository {
         await baseRemoteDataSource.getRecipeListByQuery(query, from, to);
     try {
       return Right(result.recipes);
-    } on NetworkException catch (failure) {
-      return Left(NetworkFailure(message: failure.errorMessageModel.message));
+    } catch (e) {
+      return Left(NetworkFailure(message: e.toString()));
     }
   }
 }
