@@ -27,9 +27,9 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
 
   _getStoredRecipesEvent(
       GetStoredRecipesEvent event, Emitter<FavoriteState> emitter) async {
-    // emitter(state.copyWith(
-    //   requestState: RequestState.loading,
-    // ));
+    emitter(state.copyWith(
+      requestState: RequestState.loading,
+    ));
     final result = await _getStoredRecipesUseCase();
     result.fold(
         (l) => emitter(state.copyWith(
@@ -40,7 +40,7 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
 
   _addRecipeToFavoriteEvent(
       AddRecipeToFavoriteEvent event, Emitter<FavoriteState> emitter) async {
-    //emitter(state.copyWith(requestState: RequestState.loading));
+    emitter(state.copyWith(requestState: RequestState.loading));
     final result = await _addRecipeToFavoriteUseCase(event.recipe);
     result.fold(
         (l) => emitter(state.copyWith(
@@ -53,7 +53,7 @@ class FavoriteBloc extends Bloc<FavoriteEvents, FavoriteState> {
 
   _removeRecipeFromFavorite(RemoveRecipeFromFavoriteEvent event,
       Emitter<FavoriteState> emitter) async {
-    //emitter(state.copyWith(requestState: RequestState.loading));
+    emitter(state.copyWith(requestState: RequestState.loading));
     final result = await _removeRecipeFromFavoriteUseCase(event.index);
     result.fold(
         (l) => emitter(state.copyWith(
