@@ -8,7 +8,8 @@ final customTheme = ThemeData.dark().copyWith(
     cardColor: AppColors.secondaryBackgroundColor,
     colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.lightGreen),
     textTheme: GoogleFonts.dosisTextTheme(
-        const TextTheme(headlineSmall: TextStyle(color: Colors.white))),
+            const TextTheme(headlineSmall: TextStyle(color: Colors.white)))
+        .copyWith(headlineLarge: GoogleFonts.abrilFatface(fontSize: 55)),
     tabBarTheme: TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
       unselectedLabelColor: Colors.white30,
