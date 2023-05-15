@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc_test: ^9.1.1
   cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
@@ -42,6 +43,7 @@ dependencies:
   google_fonts: ^4.0.3
   isar: ^3.1.0
   isar_flutter_libs: ^3.1.0
+  mocktail: ^0.3.0
   path_provider: ^2.0.14
   shared_preferences: ^2.1.0
 
