@@ -17,7 +17,7 @@ class HomeFeatureBloc extends Bloc<HomeEvents, HomeState> {
   }
 
   _getFeedRecipes(GetFeedRecipesEvent event, Emitter<HomeState> emitter) async {
-    emit(state.copyWith(feedRequestState: RequestState.loading));
+    emitter(state.copyWith(feedRequestState: RequestState.loading));
     try {
       if (state.feedMaxLimit) {
       } else {

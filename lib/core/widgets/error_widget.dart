@@ -16,7 +16,12 @@ class CustomErrorWidget extends StatelessWidget {
           ElevatedButton.icon(
               onPressed: onTap,
               icon: const Icon(Icons.refresh),
-              label: const Text("Try Again"))
+              label: const Text("Try Again")),
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.arrow_back_ios_new))
         ],
       ),
     );

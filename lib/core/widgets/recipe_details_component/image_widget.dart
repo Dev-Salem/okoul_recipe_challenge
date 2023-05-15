@@ -14,7 +14,7 @@ class ImageWidget extends StatelessWidget {
         imageURL,
         fit: BoxFit.cover,
         errorBuilder: (context, error, stackTrace) => Text("Error: $error"),
-        //loadingBuilder: (context, child, loadingProgress) => const SizedBox(),
+        loadingBuilder: (context, child, loadingProgress) => const SizedBox(),
       ),
     );
   }

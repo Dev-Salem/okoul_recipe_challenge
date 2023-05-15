@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/core/widgets/error_widget.dart';
 import 'package:okoul_recipe_challenge/core/widgets/progress_indicator.dart';
-import 'package:okoul_recipe_challenge/core/widgets/recipe_details_component/exports.dart';
-import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_bloc.dart';
-import 'package:okoul_recipe_challenge/features/favorite/presentation/controllers/favorite_events.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_bloc.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_events.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/presentation/controllers/recipe_details_states.dart';
@@ -19,8 +15,6 @@ class RecipeDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return SafeArea(
       child: Scaffold(
         body: BlocBuilder<RecipeDetailsBloc, RecipeDetailsState>(
