@@ -21,7 +21,7 @@ class ApiClient {
       if (e.response != null) {
         throw Exception(e.response!.data.toString());
       } else {
-        throw Exception("Error connecting ot server");
+        throw Exception("Error connecting to server");
       }
     } catch (e) {
       throw Exception("Unexpected error");

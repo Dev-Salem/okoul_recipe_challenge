@@ -15,8 +15,9 @@ class RecipeDetailsBloc extends Bloc<RecipeDetailsEvents, RecipeDetailsState> {
   _getRecipeDetailsEvent(
       GetRecipeDetailsEvent event, Emitter<RecipeDetailsState> emitter) async {
     emitter(state.copyWith(requestState: RequestState.loading));
-    final response = await _getRecipeDetailsUseCase(event.recipeId);
+
     try {
+      final response = await _getRecipeDetailsUseCase(event.recipeId);
       response.fold(
           (l) => emitter(state.copyWith(
               errorMessage: l.message, requestState: RequestState.error)),
