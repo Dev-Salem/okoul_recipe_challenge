@@ -12,7 +12,7 @@ void main() {
   final mockRepo = MockHomeRepositoryImpl();
   group("Test Home Repository -", () {
     test(
-        "if getRecipeList is called a List of recipes warped in Right is expected",
+        "if getRecipeList is called a List of recipes wrapped in Right is expected",
         () async {
       when(
         () => mockRepo.getRecipeList(0, 3),
@@ -28,7 +28,7 @@ void main() {
     });
 
     test(
-        'If getRecipeList is called, an exception message warped in Left is expected',
+        'If getRecipeList is called, an exception message wrapped in Left is expected',
         () async {
       when(
         () => mockRepo.getRecipeList(0, 3),
@@ -44,7 +44,7 @@ void main() {
     });
 
     test(
-        "if getRecipeListByQuery is called a List of recipes warped in Right is expected",
+        "if getRecipeListByQuery is called a List of recipes wrapped in Right is expected",
         () async {
       when(
         () => mockRepo.getRecipeListByQuery("", 0, 3),
@@ -60,7 +60,7 @@ void main() {
     });
 
     test(
-        'If getRecipeListByQuery is called, an exception message warped in Left is expected',
+        'If getRecipeListByQuery is called, an exception message wrapped in Left is expected',
         () async {
       when(
         () => mockRepo.getRecipeListByQuery("", 0, 3),

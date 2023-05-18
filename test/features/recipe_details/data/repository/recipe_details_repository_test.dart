@@ -13,7 +13,7 @@ void main() {
   final mockRepository = MockRecipeDetailsRepository();
   group("Test Recipe Details Repository -", () {
     test(
-        'When GetRecipeDetails is called, DetailedRecipe warped in Right is expected',
+        'When GetRecipeDetails is called, DetailedRecipe wrapped in Right is expected',
         () async {
       when(
         () => mockRepository.getRecipeDetails(0),
@@ -28,7 +28,7 @@ void main() {
     });
 
     test(
-        'When getRecipeDetails is called, a failure with message thats warped in left is expected',
+        'When getRecipeDetails is called, a failure with message thats wrapped in left is expected',
         () async {
       when(() => mockRepository.getRecipeDetails(0))
           .thenAnswer((invocation) async {
