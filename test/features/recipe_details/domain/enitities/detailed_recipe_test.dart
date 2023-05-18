@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/instruction.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/section.dart';
 

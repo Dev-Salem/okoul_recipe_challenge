@@ -3,11 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:okoul_recipe_challenge/core/errors/failure.dart';
 import 'package:okoul_recipe_challenge/core/utils/samples.dart';
-import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/component.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/detailed_recipe.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/instruction.dart';
-import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/section.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/repository/base_recipe_details_repository.dart';
 
 class MockRecipeDetailsRepository extends Mock
