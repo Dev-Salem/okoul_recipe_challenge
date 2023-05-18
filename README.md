@@ -15,6 +15,6 @@ a flutter app that consumes Tasty Api to fetch a list of recipes and cache favor
 
 ⭕ add a splash screen
 
-⭕ add unit tests
+✅ add unit tests
 
 ⭕ add widget tests
