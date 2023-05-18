@@ -1,16 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/data/models/recipe_card_model.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 
 void main() {
   test('Testing From Json of Recipe Card Model', () {
-    final fakeJson = {
-      "id": 768,
-      "name": "Apple Pie",
-      "thumbnail_url": "Http:test/testFromJson.png",
-      "user_ratings": {"count_positive": 8, "count_negative": 4, "score": 1}
-    };
-    final recipeCardModel = RecipeCardModel.formJson(fakeJson);
+    final recipeCardModel = RecipeCardModel.formJson(recipeCardMapObject);
     expect(recipeCardModel.id, 768);
     expect(recipeCardModel.name, "Apple Pie");
     expect(recipeCardModel.imageURL, isA<String>());

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/data/models/detailed_recipe_model.dart';
 import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/component.dart';
@@ -10,25 +11,8 @@ import 'package:okoul_recipe_challenge/features/recipe_details/domain/entities/s
 
 void main() {
   test("Test FromJson Method of DetailedRecipeModel Entity", () {
-    final fakeJson = {
-      "name": "Apple Pie",
-      "id": 123,
-      "thumbnail_url": "http://applePie.png",
-      "user_ratings": {"count_positive": 8, "count_negative": 4, "score": 0.3},
-      "instructions": [
-        {'display_text': 'Cut the veggies', 'position': 0},
-        {'display_text': 'Cut the veggies', 'position': 1}
-      ],
-      "sections": [
-        {
-          "components": [
-            {"raw_text": "Fresh Chickpeas", "position": 0},
-            {"raw_text": "Fresh Chickpeas", "position": 1}
-          ]
-        }
-      ]
-    };
-    final detailedRecipe = DetailedRecipeModel.fromJson(fakeJson);
+    final detailedRecipe =
+        DetailedRecipeModel.fromJson(detailedRecipeMapObject);
     expect(detailedRecipe, isA<DetailedRecipe>());
     expect(detailedRecipe.instructions, isA<List<Instruction>>());
     expect(detailedRecipe.sections, isA<List<Sections>>());

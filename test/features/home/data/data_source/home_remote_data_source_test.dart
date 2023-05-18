@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:okoul_recipe_challenge/features/home/data/models/recipe_list_model.dart';
@@ -15,28 +16,7 @@ void main() {
         requestOptions: RequestOptions(),
         statusCode: 200,
         statusMessage: "Success",
-        data: '''
-  [
-    {
-      "id": 1,
-      "name": "Tofu",
-      "thumbnail_url": "Http:test/testFromJson.png",
-      "user_ratings": {"count_positive": 2, "count_negative": 1, "score": null}
-    },
-    {
-      "id": 2,
-      "name": "Apple Pie",
-      "thumbnail_url": "Http:test/testFromJson.png",
-      "user_ratings": {"count_positive": 3, "count_negative": 9, "score": 0.4}
-    },
-    {
-      "id": 3,
-      "name": "Beans on the toast",
-      "thumbnail_url": "Http:test/testFromJson.png",
-      "user_ratings": null
-    }
-  ]
-''');
+        data: jsonListOfRecipeCards);
 
     test(
         'When get recipe List is called, an instance of `RecipeCardsList` is expected',

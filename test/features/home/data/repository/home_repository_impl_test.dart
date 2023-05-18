@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:okoul_recipe_challenge/core/errors/failure.dart';
+import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/repository/base_home_repository.dart';
 
@@ -9,12 +10,6 @@ class MockHomeRepositoryImpl extends Mock implements BaseHomeRepository {}
 
 void main() {
   final mockRepo = MockHomeRepositoryImpl();
-  const recipeCard = RecipeCard(
-      name: "name",
-      id: 1,
-      imageURL: "imageURL",
-      rating: Rating(countPositive: 0, countNegative: 0, score: 1));
-
   group("Test Home Repository -", () {
     test(
         "if getRecipeList is called a List of recipes warped in Right is expected",

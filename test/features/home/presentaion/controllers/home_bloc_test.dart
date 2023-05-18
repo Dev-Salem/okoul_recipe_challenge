@@ -1,6 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
+import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/domain/entities/entities.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_controllers.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_states.dart';
@@ -10,13 +11,6 @@ class MockHomeFeatureBloc extends MockBloc<HomeEvents, HomeState>
 
 void main() {
   final MockHomeFeatureBloc mockBloc = MockHomeFeatureBloc();
-  const recipe = RecipeCard(
-      name: "name",
-      id: 1,
-      imageURL: "imageURL",
-      rating: Rating(countPositive: 0, countNegative: 0, score: 0.7));
-  const List<RecipeCard> recipes = [recipe, recipe, recipe];
-
   group("Test HomeFeatureBloc -", () {
     blocTest("The initial value of the bloc should be HomeState ",
         setUp: () {
