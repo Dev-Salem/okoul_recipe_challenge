@@ -11,45 +11,36 @@ class MockRecipeDetailsRemoteDataSource extends Mock
     implements RecipeDetailsBaseRemoteDataSource {}
 
 void main() {
-  test('Test Get Recipe Details Remote Data Source', () {
+  test('Test Get Recipe Details Remote Data Source', () async {
     final mockCall = MockRecipeDetailsRemoteDataSource();
-    final response =
-        Response(statusCode: 200, requestOptions: RequestOptions(), data: '''
-{
-    name:"Apple",
-    id: 983,
-    thumbnail_url: "http:imageURl/test.png",
-    user_ratings:{count_positive:0, count_negative: 2, score: null},
-    instructions: [
-      {
-        display_text: "Buy an apple pie from your bakery",
-        position: 0
-      },
-      {
-        display_text: "Enjoy the pie!",
-        position: 1
-      }
-    ],
-    sections: [
-      components: [
+    const String fakeJson = '''
+    {
+      "name": "Apple Pie",
+      "id": 123,
+      "thumbnail_url": "http://applePie.png",
+      "user_ratings": {"count_positive": 8, "count_negative": 4, "score": 0.3},
+      "instructions": [
+        {"display_text": "Cut the veggies", "position": 0},
+        {"display_text": "Cut the veggies", "position": 1}
+      ],
+      "sections": [
         {
-          raw_text: "prepared apple pie",
-          position: 0
-        },
-        {
-          raw_text: "Some dish for serving",
-          position: 1
+          "components": [
+            {"raw_text": "Fresh Chickpeas", "position": 0},
+            {"raw_text": "Fresh Chickpeas", "position": 1}
+          ]
         }
       ]
-    ]
-}
-''');
+    }
+    ''';
+    final response = Response(
+        statusCode: 200, requestOptions: RequestOptions(), data: fakeJson);
     when(
       () => mockCall.getRecipeDetails(0),
     ).thenAnswer((invocation) async {
       return DetailedRecipeModel.fromJson(jsonDecode(response.data!));
     });
-    // final detailedRecipe = mockCall.getRecipeDetails(0);
-    // expect(detailedRecipe, isA<DetailedRecipe>());
+    final detailedRecipe = await mockCall.getRecipeDetails(0);
+    expect(detailedRecipe, isA<DetailedRecipe>());
   });
 }
