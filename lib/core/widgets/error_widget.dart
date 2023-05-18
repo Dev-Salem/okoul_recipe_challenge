@@ -13,15 +13,17 @@ class CustomErrorWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(errorMessage),
-          ElevatedButton.icon(
+          TextButton.icon(
               onPressed: onTap,
               icon: const Icon(Icons.refresh),
               label: const Text("Try Again")),
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_back_ios_new))
+          Navigator.of(context).canPop()
+              ? TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text("Go Back"))
+              : const SizedBox()
         ],
       ),
     );
