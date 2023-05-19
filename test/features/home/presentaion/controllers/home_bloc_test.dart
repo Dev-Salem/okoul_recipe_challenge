@@ -1,5 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:okoul_recipe_challenge/core/utils/enums.dart';
 import 'package:okoul_recipe_challenge/core/utils/samples.dart';
 import 'package:okoul_recipe_challenge/features/home/presentation/controllers/home_controllers.dart';
@@ -34,8 +35,7 @@ void main() {
               ]));
         },
         build: () => mockBloc,
-        act: (bloc) => bloc.add(const GetFeedRecipesEvent()),
-        wait: const Duration(milliseconds: 500),
+        //act: (bloc) => bloc.add(const GetFeedRecipesEvent()),
         expect: () => [
               const HomeState(feedRequestState: RequestState.loading),
               const HomeState(
