@@ -9,12 +9,10 @@ a flutter app that consumes Tasty Api to fetch a list of recipes and cache favor
 * Bloc for state management
 
 ## Road map:
-⭕ add app icon
+✅ add app icon
 
 ✅ add onboarding screens
 
-⭕ add a splash screen
+✅ add a splash screen
 
 ✅ add unit tests
-
-⭕ add widget tests
