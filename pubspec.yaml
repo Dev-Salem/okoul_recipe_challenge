@@ -46,6 +46,7 @@ dependencies:
   mocktail: ^0.3.0
   path_provider: ^2.0.14
   shared_preferences: ^2.1.0
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -54,7 +55,16 @@ dev_dependencies:
     sdk: flutter
   isar_generator: ^3.1.0
   test: ^1.22.0
+  flutter_launcher_icons: "^0.13.1"
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon_background.jpg"
+
+flutter_native_splash:
+  color: "#1f1f1f"
+  image: assets/icon_no_background.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
