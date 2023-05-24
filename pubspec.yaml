@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc_test: ^9.1.1
   cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
@@ -42,8 +43,10 @@ dependencies:
   google_fonts: ^4.0.3
   isar: ^3.1.0
   isar_flutter_libs: ^3.1.0
+  mocktail: ^0.3.0
   path_provider: ^2.0.14
   shared_preferences: ^2.1.0
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -51,7 +54,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   isar_generator: ^3.1.0
+  test: ^1.22.0
+  flutter_launcher_icons: "^0.13.1"
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon_background.jpg"
+
+flutter_native_splash:
+  color: "#1f1f1f"
+  image: assets/icon_no_background.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.

@@ -13,6 +13,8 @@ class GetFeedRecipesEvent extends HomeEvents {
 
 class GetSearchedRecipesEvent extends HomeEvents {
   final String query;
+  @override
+  List<Object?> get props => [query];
   const GetSearchedRecipesEvent({
     required this.query,
   });
